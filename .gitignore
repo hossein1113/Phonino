@@ -1,0 +1,9 @@
+.idea
+phonic.iml
+node_modules
+image
+log_every
+dump
+package-lock.json
+package.json
+nohup.out

@@ -1,0 +1,3438 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa">
+<!--<link rel="preload" href="/fonts1/custom_font.woff" as="font" crossorigin="anonymous"/>-->
+<link rel="preload" href="/fonts/IRANSansWeb_Light.woff" as="font" crossorigin="anonymous"/>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product Detail Design Using Bootstrap 4.0 </title>
+    <style>
+        @font-face {
+            font-display: swap;
+            font-family: 'FontAwesome';
+            src: url("fonts1/custom_font.eot");
+            src: url("fonts1/custom_font.eot") format("embedded-opentype"),
+            url("fonts1/custom_font.woff") format("woff"),
+            url("fonts1/custom_font.ttf") format("truetype"),
+            url("fonts1/custom_font.svg") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .center {
+            margin: auto;
+            max-width: fit-content;
+            width: auto;
+            text-align: center;
+            /*border: 3px solid #73AD21;*/
+            /*padding: 10px;*/
+        }
+        [data-icon]:before {
+            font-family: 'FontAwesome' !important;
+            content: attr(data-icon);
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        [class^="icon-"]:before,
+        [class*=" icon-"]:before {
+            font-family: "FontAwesome" !important;
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .text-i {
+            font-family: IRANSansWeb_Light, serif;
+            font-weight: 700;
+            font-size: x-large;
+        }
+
+        .icon-download:before {
+            content: "\70";
+        }
+
+        .text_align:before {
+            content: "\6a";
+            font-style: normal;
+        }
+
+        .icon-database-storage-png-free-download:before {
+            content: "\63";
+        }
+
+        .icon-ram:before {
+            font-size: 40px;
+            content: "\73";
+
+        }
+
+        .size_mob:before {
+            content: "\69";
+        }
+
+        .icon-picture8:before {
+            /*font-size: xx-large;*/
+            content: "\66";
+        }
+
+        .camera:before {
+            content: "\62";
+        }
+
+        .camera:before {
+            content: "\62";
+        }
+
+        .icon-seekpng:before {
+            content: "\6f";
+        }
+
+        .icon-picture9:before {
+            content: "\68";
+        }
+
+        .icon-noun-product-release-880485:before {
+            content: "\64";
+        }
+
+        .icon-picture13:before {
+            content: "\6b";
+        }
+
+        .icon-help:before {
+            content: "\72";
+        }
+
+        .icon-camera:before {
+            content: "\62";
+        }
+        .icon-download-1:before {
+            content: "\65";
+        }
+        .icon-images:before {
+            content: "\6e";
+        }
+        .fas {
+            font-size: xx-large;
+            color: #880005;
+        }
+
+        /*color*/
+        .icon-color:before {
+            /*font-size: 40px;*/
+            content: "\71";
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+
+        @font-face {
+            font-display: swap;
+            font-family: 'IRANSansWeb_Light';
+            src: url('fonts/IRANSansWeb_Light.eot?#') format('eot'),
+                /* IE6–۸ */ url('fonts/IRANSansWeb_Light.woff') format('woff'),
+                /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('fonts/IRANSansWeb_Light.ttf') format('truetype');
+            /* Saf3—۵, Chrome4+, FF3.5, Opera 10+ */
+        }
+
+        .disable-scrollbars::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            background: transparent; /* Chrome/Safari/Webkit */
+        }
+
+        .disable-scrollbars {
+            scrollbar-height: none;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE 10+ */
+        }
+
+        body {
+            background-color: #f1f1f1;
+            font-family: Helvetica;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 18px;
+            /*text-transform: uppercase;*/
+            letter-spacing: 1px;
+            /*color: white;*/
+            font-family: IRANSansWeb_Light;
+            color: rgba(53, 59, 72, 0.95);
+            font-weight: 900;
+            direction: ltr;
+            /*font-size: medium;*/
+            line-height: 2;
+            /*padding: 30px 0;*/
+        }
+
+        /* Table Styles */
+
+        .table-wrapper {
+
+            display: flex;
+            margin: 0 70px 70px;
+            /*border-radius: 5px;*/
+            /*border: 1px solid rgba(53, 59, 72, 0.85);*/
+            box-shadow: 0 35px 50px rgba(165, 42, 42, 0.05);
+        }
+
+        .table-wrapper .fl1 {
+            text-align: center;
+            display: table;
+            width: auto;
+            min-width: fit-content;
+        }
+
+        .fl-table {
+            /*display: block;*/
+            /*table-layout: fixed;*/
+            /*overflow-wrap: break-word;*/
+            box-sizing: content-box;
+            overflow-x: auto;
+            /*border-radius: 5px;*/
+            font-size: 12px;
+            font-weight: normal;
+            border: none;
+            /*border-collapse: collapse;*/
+            width: 100%;
+            max-width: 100%;
+            white-space: nowrap;
+            background-color: white;
+        }
+
+        .fl-table td, .fl-table th {
+            font-family: IRANSansWeb_Light;
+            text-align: right;
+            direction: ltr;
+            padding: 8px 10px;
+            font-size: medium;
+        }
+
+        /*.fl1 td, .fl1 th {*/
+        /*    text-align: center;*/
+        /*    padding: 8px 10px;*/
+        /*    font-size: medium;*/
+        /*}*/
+
+        .fl-table td {
+            font-size: medium;
+        }
+
+        .fl-table thead th:nth-child(odd) {
+            color: #ffffff;
+            background: rgba(53, 59, 72, 0.85);
+        }
+
+        .fl-table tr:nth-child(even) {
+            background: #F8F8F8;
+        }
+
+        .fl1 thead {
+            width: auto;
+        }
+
+        .tab-content p {
+            font-size: large;
+            font-weight: 700;
+            font-family: IRANSansWeb_Light;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            text-align: center;
+            background-color: rgba(53, 59, 72, 0.85);
+            color: #f8f9fa;
+            padding: 10px;
+            margin: 1px 72px;
+            border-style: solid;
+            border-color: #515867;
+            border-bottom: 3px #162a36;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 767px) {
+            .fl-table {
+                /*display: block;*/
+
+                width: 100%;
+            }
+
+            .table-wrapper {
+
+                /*display: flex;*/
+                margin: 0 0 30px;
+                /*box-shadow: 0 35px 50px rgba(0, 0, 0, 0.2);*/
+            }
+
+            .tab-content p {
+                margin: 3px 0;
+            }
+
+            /*.fl-table thead, .fl-table thead th {*/
+            /*    display: block;*/
+            /*}*/
+            /*.fl-table thead th:last-child {*/
+            /*    border-bottom: none;*/
+            /*}*/
+            /*.fl-table thead {*/
+            /*    float: right;*/
+            /*}*/
+            /*.fl-table td, .fl-table th {*/
+            /*    !*padding: 20px .625em .625em .625em;*!*/
+            /*    !*height: 60px;*!*/
+            /*    vertical-align: middle;*/
+            /*    box-sizing: border-box;*/
+            /*    !*overflow-x: auto;*!*/
+            /*    !*overflow-y: auto;*!*/
+            /*    !*width: 120px;*!*/
+            /*    !*font-size: 13px;*!*/
+            /*    text-overflow: ellipsis;*/
+            /*}*/
+            /*.fl-table thead th {*/
+            /*    !*text-align: right;*!*/
+            /*    width: auto;*/
+            /*    position: relative;*/
+            /*    overflow-x: auto;*/
+            /*    !*border-bottom: 1px solid #f7f7f9;*!*/
+            /*}*/
+            /*.fl-table tr:nth-child(even) {*/
+            /*    background: transparent;*/
+            /*}*/
+            /*.fl-table tr td:nth-child(odd) {*/
+            /*    background: #F8F8F8;*/
+            /*}*/
+            /*.fl-table tr td:nth-child(even) {*/
+            /*}*/
+        }
+
+        .tabs {
+            max-width: 90%;
+            float: none;
+            list-style: none;
+            padding: 0;
+            margin: 75px auto;
+            border-bottom: 4px solid #ccc;
+        }
+
+        .tabs:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .tabs input[type=radio] {
+            display: none;
+        }
+
+        .tabs label {
+            display: block;
+            float: left;
+            width: 33.3333%;
+            color: #ccc;
+            font-size: 30px;
+            font-weight: normal;
+            text-decoration: none;
+            text-align: center;
+            line-height: 2;
+            cursor: pointer;
+            box-shadow: inset 0 4px #ccc;
+            border-bottom: 4px solid #ccc;
+            -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
+            transition: all 0.5s;
+        }
+
+        .tabs label span {
+            /*display: none;*/
+        }
+
+        .tabs label i {
+            padding: 5px;
+            margin-right: 0;
+        }
+
+        .tabs label:hover {
+            color: #88001b;
+            box-shadow: inset 0 4px rgba(150, 0, 8, 0.84);
+            border-bottom: 4px solid rgba(150, 0, 8, 0.84);
+        }
+
+
+        .tab-content {
+            display: none;
+            width: 100%;
+            float: left;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        .tab-content * {
+            -webkit-animation: scale 0.7s ease-in-out;
+            -moz-animation: scale 0.7s ease-in-out;
+            animation: scale 0.7s ease-in-out;
+        }
+
+        @keyframes scale {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.01);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .tabs [id^="tab"]:checked + label {
+            background: #FFF;
+            box-shadow: inset 0 4px #88001b;
+            border-bottom: 4px solid #960008;
+            color: #88001b;
+        }
+
+        #tab1:checked ~ #tab-content1,
+        #tab2:checked ~ #tab-content2,
+        #tab3:checked ~ #tab-content3 {
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .tabs i {
+                padding: 5px;
+                margin-right: 10px;
+            }
+
+            .tabs label span {
+                display: inline-block;
+            }
+
+            .tabs {
+                margin: 50px auto;
+            }
+
+        }
+
+        .fl1 tr {
+            width: 100%;
+            /*float: right;*/
+        }
+
+        /* Container holding the image and the text */
+        .container23 {
+            border-right-style: solid;
+            border-left-style: solid;
+            border-width: 1px;
+            border-color: #162a36;
+            /*padding: 7px;*/
+            margin-left: 70px;
+            margin-right: 70px;
+            position: relative;
+            text-align: center;
+            background: white; /* fallback for old browsers */
+            /*background: -webkit-linear-gradient(to right, #2c4088, #f0e5e6); !* Chrome 10-25, Safari 5.1-6 *!*/
+            /*background: linear-gradient(to right, #2c4088, #f0e5e6); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
+            color: #162a36;
+        }
+
+        /* Bottom left text */
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+
+        /* Top left text */
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+
+        /* Top right text */
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+
+        /* Bottom right text */
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+        .p_code{
+            font-size: medium;
+        }
+        .p_code :hover{
+            color: white;
+        }
+        .p_code .active{
+            color: white;
+        }
+        /* Centered text */
+        .centered {
+            font-size: large;
+            font-weight: 700;
+            font-family: IRANSansWeb_Light;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            text-align: center;
+            background-color: rgba(53, 59, 72, 0.85);
+            color: #f8f9fa;
+            padding: 10px;
+            margin: 0 70px;
+            border-style: solid;
+            border-color: #515867;
+            border-bottom: 3px #162a36;
+        }
+
+        .centered1 {
+            font-size: large;
+            font-weight: 700;
+            font-family: IRANSansWeb_Light;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            text-align: center;
+            background-color: rgba(53, 59, 72, 0.85);
+            color: #f8f9fa;
+            padding: 10px;
+            margin: 0 70px;
+            border-style: solid;
+            border-color: #515867;
+            border-bottom: 3px #162a36;
+        }
+
+        .column {
+            margin-top: 8px;
+            border-right-style: solid;
+            border-width: 1px;
+            border-right-color: rgba(81, 88, 103, 0.18);
+            float: left;
+            width: 25%;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        @media screen and (max-width: 600px) {
+            .column {
+                border-right-style: none;
+                border-bottom-style: solid;
+                border-width: 1px;
+                border-bottom-color: rgba(81, 88, 103, 0.18);
+                width: 100%;
+            }
+
+            .text-i {
+                font-family: IRANSansWeb_Light, serif;
+                /*font-weight: 700;*/
+                font-size: large;
+            }
+
+            .tabs label span {
+                display: inline-block;
+            }
+
+            .tabs {
+                max-width: 100%;
+                float: none;
+                list-style: none;
+                padding: 0;
+                margin: 75px 2px;
+                border-bottom: 4px solid #ccc;
+            }
+
+            .fl-table td, .fl-table th {
+                font-size: small;
+            }
+
+            .container23 {
+                margin: 0 5px;
+            }
+
+            .centered {
+                margin: 0 5px;
+            }
+
+            .centered1 {
+                margin: 0 5px;
+            }
+        }
+
+        /* Style the list */
+        ul.tab {
+            overflow-x: scroll;
+            white-space: nowrap;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            /*overflow: hidden;*/
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Float the list items side by side */
+        ul.tab li {
+            float: left;
+            color: #880005;
+        }
+
+        /* Style the links inside the list items */
+        ul.tab li a {
+            display: inline-block;
+            /*color: #880005;*/
+            direction: ltr;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            /*border-top: none;*/
+            background-color: white;
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
+        /* Change background color of links on hover */
+        ul.tab li a:hover {
+            background-color: #880005;
+            color: white;
+        }
+
+        /* Create an active/current tablink class */
+        ul li a:focus, .active {
+            color: white;
+            background-color: #880005;
+        }
+
+        .tablinks:hover{
+            color: #dddddd;
+        }
+        /* Style the tab content */
+
+
+        /*.tabcontent {*/
+        /*   */
+        /*}*/
+
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        #overlay {
+            position: fixed;
+            z-index: 99999;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            /*display: none;*/
+            right: 0;
+            background: transparent;
+            transition: 1s 0.4s;
+        }
+        .loader2 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('https://world.fesgr.com/LOGO-farsi_bold.webp') 50% 50% no-repeat rgba(244, 244, 238, 0.96);
+        }
+        /*ul.tab li:hover {*/
+        /*    color: white;*/
+        /*}*/
+        @media screen and (max-width: 800px) {
+            .container23{
+                margin-right: 5px;
+                margin-left: 5px;
+            }
+            .centered {
+                margin: 0 5px;
+            }
+            .centered1 {
+                margin: 0 5px;
+            }
+        }
+        * {box-sizing: border-box;}
+
+        .img-magnifier-container {
+            position: relative;
+        }
+
+        .img-magnifier-glass {
+            position: absolute;
+            border: 3px solid #000;
+            border-radius: 50%;
+            cursor: none;
+            /*Set the size of the magnifier glass:*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            display: none;
+        }
+        .tab-content .row .column {
+            margin-bottom: 50px;
+            float: left;
+            width: 100%;
+            height: auto;
+            border-style: none;
+            padding: 10px;
+        }
+
+        /* Style the images inside the grid */
+        .tab-content .row .column img {
+            max-width: 100px;
+            height: auto;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .tab-content .row .column img:hover {
+            opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .tab-content .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The expanding image container (positioning is needed to position the close button and the text) */
+        .container12 {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        .tab-content2{
+            text-align: center;padding: 70px
+        }
+        @media screen and (max-width: 800px) {
+            .tab-content2{
+                padding: 8px 20px;
+            }
+            .tab-content .row .column img {
+                max-width: 60px;
+            }
+            .tab-content .row .column {
+                margin-bottom: 30px;
+            }
+        }
+
+        /*body {*/
+        /*    background: #333;*/
+        /*    margin: 0;*/
+        /*    font-family: 'Lato', sans-serif;*/
+        /*}*/
+
+        /** {*/
+        /*    box-sizing: border-box;*/
+        /*}*/
+
+        .happiness__modal {
+            background: #fff;
+            max-width: 780px;
+            margin: 40px auto;
+            border-radius: 20px;
+            width: 90%;
+            /*height: 300px;*/
+            max-height: 0;
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            transition-delay: 0;
+            max-height: 10000px;
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        .happiness__header {
+            height: 150px;
+            background: #cea052;
+            border-radius: 20px;
+            background: linear-gradient(to right, #cea052, #fdcba1);
+            transition: background 0.3s ease;
+            will-change: background;
+            overflow: hidden;
+            color: #fff;
+            transition: max-height 0.2s ease;
+            position: relative;
+        }
+
+        .happiness__header--label {
+            /*font-weight: 400;*/
+            font-size: 1.6em;
+            font-weight: 900;
+            position: absolute;
+            left: 250px;
+            top: 2.5em;
+        }
+
+        .happiness__emoji {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+            top: 20px;
+            left: 40px;
+            border: 5px solid rgba(255, 255, 255, 0.55);
+            position: relative;
+            direction: ltr;
+            transform-origin: top left;
+            transition: transform 0.2s ease;
+        }
+
+        .happiness__emoji--eyeR, .happiness__emoji--eyeL {
+            width: 8%;
+            height: 8%;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.53);
+            position: absolute;
+            top: 38%;
+            left: 33%;
+            margin-left: -4%;
+            margin-top: -4%;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .happiness__emoji--eyeBrew {
+            width: 200%;
+            position: absolute;
+            height: 30%;
+            top: -75%;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.53);
+            opacity: 0;
+            transform: translateX(-25%);
+            transition: all 0.2s ease;
+        }
+
+        .happiness__emoji--eyeR .happiness__emoji--eyeBrew {
+            transform: translate(-30%, 180%) rotate(-30deg);
+        }
+
+        .happiness__emoji--eyeL .happiness__emoji--eyeBrew {
+            transform: translate(-20%, 180%) rotate(30deg);
+        }
+
+        .happiness__emoji--eyeR {
+            left: 66%;
+        }
+
+        .happiness__emoji--mouth {
+            border: 5px solid rgba(255, 255, 255, 0.53);
+            border-top-color: transparent;
+            border-left: transparent;
+            border-right: transparent;
+            border-radius: 0;
+            position: absolute;
+            display: inline-block;
+            bottom: 30%;
+            left: 27%;
+            min-width: 44%;
+            min-height: 40px;
+            transition: all 0.2s ease;
+            transform-origin: bottom center;
+        }
+
+        .happiness__main {
+            height: 50%;
+            color: #c4c4c4;
+            padding: 30px 0;
+        }
+
+        .happiness__main--slider {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .happiness__main--slider label {
+            margin: 0 1em;
+            font-size: larger;
+            font-weight: bolder;
+            color: #0000007a;
+            /*font: 200 2em/0.9 'Lato', sans-serif;*/
+            text-transform: capitalize;
+        }
+
+        input[type=range] {
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            outline: none !important;
+            background: linear-gradient(to right, #bf7540, #e8d67d);
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-ms-track {
+            height: 10px;
+            border: none;
+            color: transparent;
+        }
+
+        input[type=range]::-ms-fill-upper {
+            background-color: #fff;
+        }
+
+        input[type=range]::-ms-fill-lower {
+            background-color: #267928;
+        }
+
+        input[type=range]::-ms-fill-upper, input[type=range]::-ms-fill-lower {
+            border: solid 2px #444;
+            border-radius: 8px;
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-ms-thumb {
+            border: 8px solid #fff;
+            width: 24px;
+            height: 24px;
+            background: none;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-moz-range-track {
+            border: solid 2px #fff;
+            background: linear-gradient(to right, #bf4040, #a1e87d);
+            border-radius: 8px;
+            height: 10px;
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            border: 8px solid #fff;
+            width: 24px;
+            box-sizing: border-box;
+            height: 24px;
+            background: none;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            -webkit-appearance: none;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            border: 8px solid #fff;
+            width: 24px;
+            height: 24px;
+            background: none;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            box-sizing: border-box;
+            -webkit-appearance: none;
+        }
+        @media screen and (max-width: 600px) {
+            .happiness__header--label {
+                font-size: 20px;
+            }
+            .happiness__emoji {
+                height: 110px;
+                width: 110px;
+                top: 20px;
+                left: 40px;
+            }
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+        :root {
+            --body-bg: white;
+            --body-color: #22262a;
+            --body-color-hover: black;
+            --footer-social-link-hover-bg: #ededed;
+            --media-comment-body-color: #22262a;
+            --media-comment-name-color: var(--body-color);
+            --muted-color: rgba(4, 5, 6, 0.51);
+            --theme-color-blue: #d6ecff;
+            --theme-color-red: #fde7e7;
+            --theme-color-green: #d6f5d9;
+            --theme-color-yellow: #fffbd1;
+            --theme-color-pink: #ffd6f9;
+            --theme-color-cyan: #d5fbfb;
+            --theme-color-violet: #ebe3fc;
+        }
+
+        .dark-theme {
+            --body-bg: #22262a;
+            --body-color: #959ea7;
+            --body-color-hover: white;
+            --footer-social-link-hover-bg: #3b4045;
+            --media-comment-body-color: #22262a;
+        }
+
+        [data-theme="default"] {
+            --media-comment-body-bg: #f9fafb;
+        }
+
+        [data-theme="blue"] {
+            --media-comment-body-bg: var(--theme-color-blue);
+        }
+
+        [data-theme="red"] {
+            --media-comment-body-bg: var(--theme-color-red);
+        }
+
+        [data-theme="green"] {
+            --media-comment-body-bg: var(--theme-color-green);
+        }
+
+        [data-theme="yellow"] {
+            --media-comment-body-bg: var(--theme-color-yellow);
+        }
+
+        [data-theme="pink"] {
+            --media-comment-body-bg: var(--theme-color-pink);
+        }
+
+        [data-theme="cyan"] {
+            --media-comment-body-bg: var(--theme-color-cyan);
+        }
+
+        [data-theme="violet"] {
+            --media-comment-body-bg: var(--theme-color-violet);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+
+        a, a:link {
+            color: var(--body-color);
+            text-decoration: none;
+            transition: .3s linear;
+        }
+
+        a:hover {
+            color: var(--body-color-hover);
+        }
+
+        a:focus {
+            outline: none;
+        }
+
+        h1, h3, h4, h5, h6 {
+            margin: 0;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 1.7rem;
+            margin-bottom: .5rem;
+        }
+
+        h5 {
+            font-size: 1.1rem;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media screen and (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        .center-block {
+            max-width: 45rem;
+            margin: 0 auto;
+        }
+
+        .addonz-switch {
+            z-index: 0;
+            position: relative;
+            display: inline-block;
+        }
+
+        .addonz-switch > .addonz-switch-input {
+            appearance: none;
+            z-index: -1;
+            position: absolute;
+            right: 4px;
+            top: -10px;
+            display: block;
+            margin: 0;
+            background-color: #151a20;
+            outline: none;
+            transform: scale(1);
+            pointer-events: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.2s;
+        }
+
+        .addonz-switch > .addonz-switch-inner {
+            display: inline-block;
+            width: 100%;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .addonz-switch > .addonz-switch-inner::before {
+            content: "";
+            float: right;
+            display: inline-block;
+            margin: 5px 0 5px 15px;
+            border-radius: 7px;
+            width: 36px;
+            height: 14px;
+            background-color: #adb5bd;
+            vertical-align: top;
+            transition: background-color 0.2s, opacity 0.2s;
+        }
+
+        .addonz-switch > .addonz-switch-inner::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            right: 1rem;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .addonz-switch > .addonz-switch-input:checked {
+            right: -14px;
+            background-color: #1c939c;
+        }
+
+        .addonz-switch > .addonz-switch-input:checked + .addonz-switch-inner::before {
+            background-color: #1c939c;
+        }
+
+        .addonz-switch > .addonz-switch-input:checked + .addonz-switch-inner::after {
+            background-color: #2ab6c0;
+            transform: translateX(16px);
+        }
+
+        .addonz-switch:hover > .addonz-switch-input {
+            opacity: .08;
+        }
+
+        .addonz-switch:hover > .addonz-switch-input:focus {
+            opacity: .18;
+        }
+
+        .addonz-switch > .addonz-switch-input:focus,
+        .addonz-switch > .addonz-switch-input.focus {
+            opacity: .2;
+        }
+
+        .addonz-switch > .addonz-switch-input:active {
+            opacity: 1;
+            transform: scale(0);
+            transition: transform 0s, opacity 0s;
+        }
+
+        .addonz-switch > .addonz-switch-input:active + .addonz-switch-inner::before {
+            background-color: #1c939c;
+        }
+
+        .addonz-switch > .addonz-switch-input:checked:active + .addonz-switch-inner::before {
+            background-color: #adb5bd;
+        }
+
+        .addonz-switch > .addonz-switch-input:disabled {
+            opacity: 0;
+        }
+
+        .addonz-switch > .addonz-switch-input:disabled + .addonz-switch-inner {
+            color: #2ab6c0;
+            opacity: .70;
+            cursor: default;
+        }
+
+        .addonz-switch > .addonz-switch-input:disabled + .addonz-switch-inner::before {
+            background-color: rgba(52, 58, 64, 0.4) !important;
+        }
+
+        .addonz-switch > .addonz-switch-input:checked:disabled + .addonz-switch-inner::before {
+            background-color: rgba(52, 58, 64, 0.4) !important;
+        }
+
+        .box-theme-option {
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.039);
+            border-radius: .8rem;
+            margin-bottom: 4rem;
+        }
+
+        .box-theme-option .box-theme-option-inner {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 768px) {
+            .box-theme-option .box-theme-option-inner {
+                justify-content: start;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            .box-theme-option .box-theme-option-inner .addonz-form-inline {
+                margin-bottom: 0;
+                margin-right: 4rem;
+            }
+        }
+
+        .box-theme-option .addonz-form-inline {
+            margin-top: -5px;
+            margin-bottom: 2rem;
+        }
+
+        .badge-color {
+            text-decoration: none;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            background-color: #f8f9fa;
+            margin-bottom: .8rem;
+        }
+
+        .badge-color .badge-color-icon {
+            visibility: hidden;
+        }
+
+        .badge-color.blue {
+            background-color: var(--theme-color-blue);
+        }
+
+        .badge-color.red {
+            background-color: var(--theme-color-red);
+        }
+
+        .badge-color.green {
+            background-color: var(--theme-color-green);
+        }
+
+        .badge-color.yellow {
+            background-color: var(--theme-color-yellow);
+        }
+
+        .badge-color.pink {
+            background-color: var(--theme-color-pink);
+        }
+
+        .badge-color.cyan {
+            background-color: var(--theme-color-cyan);
+        }
+
+        .badge-color.violet {
+            background-color: var(--theme-color-violet);
+        }
+
+        .badge-color.active .badge-color-icon {
+            visibility: visible;
+        }
+
+        .twtr-emoji {
+            position: relative;
+            vertical-align: middle;
+            top: -.1rem;
+        }
+
+        .media-comment-body .media-comment-data-person, .ripple-grow, .media-comment-footer, .media-footer-option, .media-footer-option .icon-bubble-content, .collapse-repply {
+            display: flex;
+            align-items: center;
+        }
+
+        .text-muted {
+            margin-right: 40px;
+            color: var(--muted-color);
+        }
+
+        .comment-wrapper {
+            padding-top: 5rem;
+        }
+
+        .media-comment {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .media-comment .avatar-content {
+            /*margin-right: 1rem;*/
+        }
+
+        .media-comment .avatar-content .avatar {
+            border-radius: 50%;
+        }
+
+        .media-comment-body {
+            position: relative;
+            display: inline-block;
+            padding: 1.2rem;
+            background-color: azure;
+            border-radius: 0.8rem;
+            padding-right: 3rem;
+        }
+
+        .media-comment-body .media-option {
+            position: absolute;
+            right: .7rem;
+            top: 1rem;
+            visibility: hidden;
+        }
+
+        .media-comment-body:hover .media-option {
+            visibility: visible;
+        }
+
+        .media-comment-body .media-comment-data-person {
+            margin-bottom: .3rem;
+        }
+
+        .media-comment-body .media-comment-text {
+            color: var(--media-comment-body-color);
+        }
+
+        .media-comment-body .media-comment-name {
+            color: var(--media-comment-name-color);
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: inherit;
+            line-height: 1.5;
+            letter-spacing: 0.0178571em;
+            margin-right: 1rem;
+        }
+
+        .ripple-grow {
+            width: 2.5rem;
+            height: 2.5rem;
+            justify-content: center;
+            border-radius: 50%;
+            color: rgba(0, 0, 0, 0.658) !important;
+        }
+
+        .ripple-grow:hover {
+            background-color: rgba(0, 0, 0, 0.122);
+            color: #000;
+        }
+
+        .media-comment-footer {
+            margin-top: .6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .media-footer-option {
+            padding: 0 1rem 0 0;
+            text-decoration: none;
+            transition: all .3s;
+            color: var(--body-color);
+        }
+
+        .media-footer-option .icon-bubble-content {
+            transition: all .3s;
+            justify-content: center;
+            margin-right: .4rem;
+            border-radius: 50%;
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        .media-footer-option.repply:hover {
+            color: #03c1e2;
+        }
+
+        .media-footer-option.repply:hover .icon-bubble-content {
+            background-color: rgba(0, 156, 184, 0.233);
+        }
+
+        .media-footer-option.like:hover {
+            color: #cd0aa9;
+        }
+
+        .media-footer-option.like:hover .icon-bubble-content {
+            background-color: rgba(215, 9, 178, 0.169);
+        }
+
+        .media-footer-option.share:hover {
+            color: #009402;
+        }
+
+        .media-footer-option.share:hover .icon-bubble-content {
+            background-color: rgba(0, 179, 3, 0.164);
+        }
+
+        .collapse-repply {
+            margin-bottom: 1.5rem;
+        }
+
+        .collapse-repply svg {
+            transition: all .3s;
+            transform: rotate(-180deg);
+        }
+
+        .collapse-repply.active svg {
+            transform: rotate(0deg);
+        }
+
+        .loading-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 0;
+            margin-bottom: 5rem;
+        }
+
+        .loading-content path {
+            fill: var(--body-color);
+        }
+
+        .footer {
+            padding: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+            color: var(--body-color);
+        }
+
+        .footer .yo-content {
+            margin-bottom: .3rem;
+            font-weight: 500;
+            color: var(--body-color);
+        }
+
+        .footer .yo {
+            text-decoration: underline;
+        }
+
+        .footer .footer-social {
+            display: flex;
+            align-items: center;
+        }
+
+        .footer .footer-social-link {
+            color: var(--body-color);
+            width: 2.8rem;
+            height: 2.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4rem;
+            transition: .3s linear;
+        }
+
+        .footer .footer-social-link:hover {
+            color: var(--body-color-hover);
+            background-color: var(--footer-social-link-hover-bg);
+        }
+        /*b/ody {background: #333;margin: 0; font-family: 'Lato', sans-serif;}*/
+
+        /** {*/
+        /*    box-sizing: border-box;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div id="overlay">
+    <div class="loader2"></div>
+</div>
+<p id="name_phone" class="centered">Network</p>
+<div class="container23">
+    <div>
+        <img id="image" alt="Snow" style="width:auto;padding-top: 10px;padding-bottom: 10px">
+        <div class="row">
+            <div class="column" style="background-color:transparent;">
+                <i class="fas icon-picture8"></i>
+                <h2 id="mob_size"></h2>
+                <!--                <p>Some text..</p>-->
+            </div>
+            <div class="column" style="background-color:transparent;">
+                <i class="fas icon-images"></i>
+                <h2 id="battery"></h2>
+                <!--                <p>Some text..</p>-->
+            </div>
+            <div class="column" style="background-color:transparent;">
+                <i class="fas icon-database-storage-png-free-download"></i>
+                <h2 id="storage_ram"></h2>
+                <!--                <p>Some text..</p>-->
+            </div>
+            <div class="column" style="background-color:transparent;border-right-style: none">
+                <i class="fas icon-camera"></i>
+                <h2 id="camera_title"></h2>
+                <!--                <p>Some text..</p>-->
+            </div>
+        </div>
+    </div>
+    <!--    <div class="bottom-left">Bottom Left</div>-->
+    <!--    <div class="top-left">Top Left</div>-->
+    <!--    <div class="top-right">Top Right</div>-->
+    <!--    <div class="bottom-right">Bottom Right</div>-->
+    <!--    <div class="centered">Centered</div>-->
+
+</div>
+<!--        onclick="openCity(event, 'Tokyo')-->
+<div style="display: none">
+    <li id="tabd_main">
+        <a class="tablinks"  onclick="openCity(event, 'Tokyo')">
+            <p style="display: inline-block;" class="p_code" >64 GB</p>
+            <p style="display: inline-block;margin-left: 10px;" class="p_code" >6 GB</p>
+        </a>
+    </li>
+</div>
+<p id="name_phone_en" style="direction: ltr" class="centered1">Network</p>
+<!--<div class="center">-->
+<div class="center" style="margin-top: 20px;font-weight: 900">
+    <ul id="price_main" style="background-color:white" class="tab disable-scrollbars">
+    </ul>
+</div>
+<div class="center">
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    <div id="tehran" class="tabcontent">
+        <h3>tehran</h3>
+        <p>tehran is the capital of iran.</p>
+    </div>
+    <div id="isfahan" class="tabcontent">
+        <h3>isfahan</h3>
+        <p>isfahan is the capital of iran.</p>
+    </div>
+</div>
+
+<!--</div>-->
+<div class="sketchfab-embed-wrapper center">
+    <iframe id="3D_i" style="display: none;width: 700px ;height: 500px;max-width:100%;margin-top: 30px" title="Samsung Galaxy A72" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="fullscreen; autoplay; vr" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share>
+    </iframe>
+</div>
+<div class="tabs">
+    <input type="radio" name="tabs" id="tab1" onclick="resize_we()" checked>
+    <label for="tab1">
+        <span class="text-i">بررسی</span>
+    </label>
+
+    <input type="radio" name="tabs" onclick="resize_we()" id="tab2">
+    <label for="tab2">
+        <span class="text-i">تصاویر</span>
+    </label>
+
+    <input type="radio" name="tabs" onclick="resize_we()" id="tab3" checked>
+    <label for="tab3">
+        <span class="text-i">مشخصات</span>
+    </label>
+
+    <div id="tab-content1" class="tab-content">
+        <h3>HTML5 Snippets</h3>
+        <p>HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It was
+            finalized, and published, on 28 October 2014 by the World Wide Web Consortium (W3C). This is the fifth
+            revision of the HTML standard since the inception of the World Wide Web.</p>
+    </div> <!-- #tab-content1 -->
+
+    <div  id="tab-content2" class="tab-content tab-content2">
+        <!--        <div dir="ltr" style="text-align: center;width: fit-content;display: inline-block" class="img-magnifier-container">-->
+        <!--            <img width="500" height="500" id="myimage"  src="/image/samsung-galaxy-a31-1.jpg" alt="Girl">-->
+        <!--        </div>-->
+        <div style="display: none">
+            <div id="column_image"  class="column">
+                <img src="/image/samsung-galaxy-a31-1.jpg" onclick="myFunction(this);">
+            </div>
+        </div>
+        <div id="row_image" class="row">
+
+        </div>
+        <div class="container12" style="width: fit-content;display: inline-block;text-align: center">
+            <!-- Close the image -->
+            <!--            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>-->
+
+            <!-- Expanded image -->
+            <img id="expandedImg" style="width: 100%">
+
+            <!-- Image text -->
+            <div id="imgtext"></div>
+        </div>
+
+
+    </div> <!-- #tab-content2 -->
+
+    <div style="padding-top: 40px" id="tab-content3" class="tab-content">
+        <p class="moh_id" style="display: none">Network</p>
+        <div style="display: none">
+            <div id="main_data" class="table-wrapper">
+                <table class="fl-table fl1 disable-scrollbars">
+                    <thead>
+                    </thead>
+                </table>
+                <table id=table2 class="content_table fl-table disable-scrollbars">
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<div style="direction: ltr" class="happiness">
+    <div class="happiness__modal">
+        <div class="happiness__header">
+            <div class="happiness__emoji">
+        <span class="happiness__emoji--eyeL">
+          <span class="happiness__emoji--eyeBrew"></span>
+        </span>
+                <span class="happiness__emoji--eyeR">
+          <span class="happiness__emoji--eyeBrew"></span>
+        </span>
+                <span class="happiness__emoji--mouth"></span>
+            </div>
+            <span style="font-family: IRANSansWeb_Light" class="happiness__header--label">آیا شما از این گوشی راضی هستید؟</span>
+            <a class="happiness__header--close" href="javascript:;"><span></span><span></span></a>
+        </div>
+        <div class="happiness__main">
+            <div class="happiness__main--slider">
+                <label style="font-family: IRANSansWeb_Light;display: none">اصلا راضی نیستم</label>
+                <input id="happinessSlider" type="range" step="1" min="0" max="100" oninput="updateValue(this)">
+                <label style="font-family: IRANSansWeb_Light;display: none">راضی هستم</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<body data-theme="default">-->
+<!-- Wrapper-->
+<div class="comment-wrapper">
+    <!-- Theme options-->
+    <!--    <div class="container">-->
+    <!--        <div class="center-block">-->
+    <!--            <div class="box-theme-option">-->
+    <!--                <div class="box-theme-option-inner">-->
+    <!--                    <div class="addonz-form-inline">-->
+    <!--                        <label class="addonz-switch">-->
+    <!--                            <input class="addonz-switch-input dark" type="checkbox"/><span class="addonz-switch-inner">Light</span>-->
+    <!--                        </label>-->
+    <!--                    </div>-->
+    <!--                    <div class="selected-color-content"><a class="badge-color default active" href="javascript://" data-color="default">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color blue" href="javascript://" data-color="blue">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color red" href="javascript://" data-color="red">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color green" href="javascript://" data-color="green">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color yellow" href="javascript://" data-color="yellow">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color pink" href="javascript://" data-color="pink">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color cyan" href="javascript://" data-color="cyan">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a><a class="badge-color violet" href="javascript://" data-color="violet">-->
+    <!--                            <svg class="badge-color-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">-->
+    <!--                                <path d="M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z"></path>-->
+    <!--                            </svg></a></div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div style="font-family: IRANSansWeb_Light;padding: 30px;background-color: white;border-radius: 40px" class="container">
+        <div class="center-block">
+            <div class="media-comment"><a class="avatar-content" href="javascript://">
+                    <svg class="avatar" width="70" height="70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#697179"></rect>
+                    </svg></a>
+                <div class="media-content">
+                    <div class="media-comment-body">
+                        <div class="media-option"><a class="ripple-grow" href="javascript://" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg class="ripple-icon" width="28" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                                    <g fill="currentColor">
+                                        <circle cx="5" cy="12" r="2"></circle>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                        <circle cx="19" cy="12" r="2"></circle>
+                                    </g>
+                                </svg></a></div>
+                        <div class="media-comment-data-person"><a class="media-comment-name" href="javascript://">حسن</a><span class="text-muted">۲ ساعت پیش</span></div>
+                        <div class="media-comment-text">والا عجب گوشی خبیه</div>
+                    </div>
+                    <div class="media-comment-footer"><a class="media-footer-option repply" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                  </svg></span><span class="media-footer-option-text">86</span></a><a class="media-footer-option like" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                  </svg></span><span class="media-footer-option-text">755</span></a><a class="media-footer-option share" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                    <path fill="currentColor" d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                  </svg></span></a></div>
+                    <!-- Collapse button--><a class="collapse-repply" href="javascript://">
+                        <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                        </svg>Ver 45 respuestas</a>
+                    <!-- Repply-->
+                    <div class="media-comment"><a class="avatar-content" href="javascript://">
+                            <svg class="avatar" width="55" height="55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                <rect width="100%" height="100%" fill="#697179"></rect>
+                            </svg></a>
+                        <div class="media-content">
+                            <div class="media-comment-body">
+                                <div class="media-option"><a class="ripple-grow" href="javascript://" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <svg class="ripple-icon" width="28" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                                            <g fill="currentColor">
+                                                <circle cx="5" cy="12" r="2"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                                <circle cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg></a></div>
+                                <div class="media-comment-data-person"><a class="media-comment-name" href="javascript://">هادی</a><span class="text-muted">بیست و پنج دقیقه پیش</span></div>
+                                <div class="media-comment-text">نه بابا کجا گوشی خبیه!</div>
+                            </div>
+                            <div class="media-comment-footer"><a class="media-footer-option repply" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                      </svg></span><span class="media-footer-option-text">12</span></a><a class="media-footer-option like" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                      </svg></span><span class="media-footer-option-text">32</span></a><a class="media-footer-option share" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                        <path fill="currentColor" d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                      </svg></span></a></div>
+                        </div>
+                    </div>
+                    <!-- Repply-->
+                    <div class="media-comment"><a class="avatar-content" href="javascript://">
+                            <svg class="avatar" width="55" height="55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                <rect width="100%" height="100%" fill="#697179"></rect>
+                            </svg></a>
+                        <div class="media-content">
+                            <div class="media-comment-body">
+                                <div class="media-option"><a class="ripple-grow" href="javascript://" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <svg class="ripple-icon" width="28" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                                            <g fill="currentColor">
+                                                <circle cx="5" cy="12" r="2"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                                <circle cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg></a></div>
+                                <div class="media-comment-data-person"><a class="media-comment-name" href="javascript://">هادی</a><span class="text-muted">بیست و پنج دقیقه پیش</span></div>
+                                <div class="media-comment-text">نه بابا کجا گوشی خبیه!</div>
+                            </div>
+                            <div class="media-comment-footer"><a class="media-footer-option repply" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                      </svg></span><span class="media-footer-option-text">132</span></a><a class="media-footer-option like" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                      </svg></span><span class="media-footer-option-text">93</span></a><a class="media-footer-option share" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                        <path fill="currentColor" d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                      </svg></span></a></div>
+                        </div>
+                    </div>
+                    <!-- Repply-->
+                    <div class="media-comment"><a class="avatar-content" href="javascript://">
+                            <svg class="avatar" width="55" height="55" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                                <rect width="100%" height="100%" fill="#697179"></rect>
+                            </svg></a>
+                        <div class="media-content">
+                            <div class="media-comment-body">
+                                <div class="media-option"><a class="ripple-grow" href="javascript://" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <svg class="ripple-icon" width="28" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                                            <g fill="currentColor">
+                                                <circle cx="5" cy="12" r="2"></circle>
+                                                <circle cx="12" cy="12" r="2"></circle>
+                                                <circle cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg></a></div>
+                                <div class="media-comment-data-person"><a class="media-comment-name" href="javascript://">حسین</a><span class="text-muted">بیست و پنج دقیقه پیش</span></div>
+                                <div class="media-comment-text">نه بابا کجا گوشی خبیه!</div>
+                            </div>
+                            <div class="media-comment-footer"><a class="media-footer-option repply" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                      </svg></span><span class="media-footer-option-text">3</span></a><a class="media-footer-option like" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                      </svg></span><span class="media-footer-option-text">5</span></a><a class="media-footer-option share" href="javascript://"><span class="icon-bubble-content">
+                      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                        <path fill="currentColor" d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                      </svg></span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media-comment"><a class="avatar-content" href="javascript://">
+                    <svg class="avatar" width="70" height="70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#697179"></rect>
+                    </svg></a>
+                <div class="media-content">
+                    <div class="media-comment-body">
+                        <div class="media-option"><a class="ripple-grow" href="javascript://" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg class="ripple-icon" width="28" height="28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                                    <g fill="currentColor">
+                                        <circle cx="5" cy="12" r="2"></circle>
+                                        <circle cx="12" cy="12" r="2"></circle>
+                                        <circle cx="19" cy="12" r="2"></circle>
+                                    </g>
+                                </svg></a></div>
+                        <div class="media-comment-data-person"><a class="media-comment-name" href="javascript://">Phillips Arthur </a><span class="text-muted">21 h</span></div>
+                        <div class="media-comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    </div>
+                    <div class="media-comment-footer"><a class="media-footer-option repply" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"></path>
+                  </svg></span><span class="media-footer-option-text">7654</span></a><a class="media-footer-option like" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"></path>
+                  </svg></span><span class="media-footer-option-text">6545</span></a><a class="media-footer-option share" href="javascript://"><span class="icon-bubble-content">
+                  <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"></path>
+                    <path fill="currentColor" d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"></path>
+                  </svg></span></a></div>
+                </div>
+            </div>
+            <!-- Show more content-->
+<!--            <div class="loading-content">-->
+<!--                <svg class="svg-loading" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">-->
+<!--            <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946 s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634 c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>-->
+<!--                    <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0 C22.32,8.481,24.301,9.057,26.013,10.047z">-->
+<!--                        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>-->
+<!--                    </path>-->
+<!--          </svg>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<!--</body>-->
+<!-- Footer-->
+</html>
+
+<script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+<script>
+
+    function myFunction(imgs) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg");
+        // Get the image text
+        // var imgText = document.getElementById("imgtext");
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src;
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        // imgText.innerHTML = imgs.alt;
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "inline-block";
+    }
+    function magnify(imgID, zoom) {
+        var img, glass, w, h, bw;
+        img = document.getElementById(imgID);
+        /*create magnifier glass:*/
+        glass = document.createElement("DIV");
+        glass.setAttribute("class", "img-magnifier-glass");
+        /*insert magnifier glass:*/
+        if(!img.parentElement.contains(glass)){
+            img.parentElement.insertBefore(glass, img);
+        }else{
+            glass.style.display = 'none';
+        }
+        /*set background properties for the magnifier glass:*/
+        glass.style.backgroundImage = "url('" + img.src + "')";
+        glass.style.textAlign = "center";
+        glass.style.marginLeft = '-5px';
+        glass.style.marginTop= '-5px';
+        glass.style.backgroundRepeat = "no-repeat";
+        glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+        console.log(img.height);
+        console.log(img.width);
+        glass.style.width = (img.width/3.53) +'px';
+        glass.style.height =  (img.height/3.53) +'px';
+        bw = 3;
+        w = (img.width/3.53) / 2;
+        h = (img.height/3.53) / 2;
+        function resize(){
+            glass.style.backgroundImage = "url('" + img.src + "')";
+            glass.style.textAlign = "center";
+            glass.style.marginLeft = '-5px';
+            glass.style.marginTop= '-5px';
+            glass.style.backgroundRepeat = "no-repeat";
+            glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+            console.log(img.height);
+            console.log(img.width);
+            glass.style.width = (img.width/3.53) +'px';
+            glass.style.height =  (img.height/3.53) +'px';
+            bw = 3;
+            w = (img.width/3.53) / 2;
+            h = (img.height/3.53) / 2;
+        }
+        /*execute a function when someone moves the magnifier glass over the image:*/
+        glass.addEventListener("mousemove", moveMagnifier);
+        img.addEventListener("mousemove", moveMagnifier);
+        glass.addEventListener("mouseleave", mouse_leave);
+        img.addEventListener("mouseenter", mouse_enter);
+        /*and also for touch screens:*/
+        // glass.addEventListener("touchmove", miframeoveMagnifier);
+        // img.addEventListener("touchmove", moveMagnifier);
+        function moveMagnifier(e) {
+            var pos, x, y;
+            /*prevent any other actions that may occur when moving over the image*/
+            e.preventDefault();
+            /*get the cursor's x and y positions:*/
+            pos = getCursorPos(e);
+            x = pos.x;
+            y = pos.y;
+
+            /*prevent the magnifier glass from being positioned outside the image:*/
+            if (x > img.width - 20 ) {x = img.width -20;}
+            if (x < w / zoom) {x = w / zoom;}
+            if (y > img.height -20) {y = img.height - 20;}
+            if (y < h / zoom) {y = h / zoom;}
+            // console.log(x + '  ' + y);
+            /*set the position of the magnifier glass:*/
+            glass.style.left = (x - w ) + "px";
+            glass.style.top = (y - h) + "px";
+            /*display what the magnifier glass "sees":*/
+            glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+        }
+
+        window.addEventListener('resize', function () {
+            console.log(img.height);
+            console.log(img.width);
+            resize();
+        });
+        function mouse_leave() {
+            console.log('leave');
+            glass.style.display = 'none';
+        }
+        function mouse_enter() {
+            resize();
+            console.log('enter');
+            glass.style.display = 'block';
+        }
+        // resize();
+        function getCursorPos(e) {
+            var a, x = 0, y = 0;
+            e = e || window.event;
+            /*get the x and y positions of the image:*/
+            a = img.getBoundingClientRect();
+            /*calculate the cursor's x and y coordinates, relative to the image:*/
+            x = e.pageX - a.left;
+            y = e.pageY - a.top;
+            /*consider any page scrolling:*/
+            x = x - window.pageXOffset;
+            y = y - window.pageYOffset;
+            return {x : x, y : y};
+        }
+        // setTimeout(function () {
+        //
+        // },2000);
+    }
+    magnify("expandedImg", 2);
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        // for (i = 0; i < tabcontent.length; i++) {
+        //     tabcontent[i].style.display = "none";
+        // }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+            // tablinks[i].style.color = "#880005";
+        }
+        // document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.classList.add('active');
+        // evt.currentTarget.style.color = "white";
+    }
+
+    // document.getElementById("london").click();
+    // openCity(event, 'London');
+    var io;
+    var app = {
+        socket: null,
+        connect: function () {
+            var self = this;
+            if (self.socket) {
+                self.socket.destroy();
+                delete self.socket;
+                self.socket = null;
+            }
+            this.socket = io.connect("https://world.fesgr.com:3303", {
+                transports: ["websocket"],
+                withCredentials: true,
+                extraHeaders: {
+                    "my-custom-header": "abcd"
+                },
+                secure: true,
+                'reconnection': true,
+                'reconnectionAttempts': 3,
+                'reconnectionDelay': 1000,
+                'reconnectionDelayMax': 3000
+            });
+            this.socket.on('connect', function () {
+                console.log('connected to server');
+            });
+            this.socket.on('disconnect', function () {
+                console.log('disconnected from server');
+            });
+            this.socket.on('get_phone', function (message) {
+                console.log(message[0]);
+                make_result_show(message);
+
+            });
+        }
+    };
+    var parts = window.location.search.substr(1).split("&");
+    var $_GET = {};
+    for (var i = 0; i < parts.length; i++) {
+        var temp = parts[i].split("=");
+        $_GET[decodeURIComponent(temp[0])] = decodeURIComponent(temp[1]);
+    }
+    // alert($_GET['phone']);
+    app.connect();
+    app.socket.emit('get_phone', $_GET['phone']);
+
+    function make_titre(titre) {
+        switch (titre) {
+            case 'network':
+                return 'شبکه';
+            case 'technology':
+                return 'نسل';
+            case '2g_bands':
+                return 'باندهای 2G';
+            case '3g_bands':
+                return 'باندهای 3G';
+            case '4g_bands':
+                return 'باندهای 4G';
+            case '5g_bands':
+                return 'باندهای 5G';
+            case 'speed':
+                return 'سرعت';
+            case 'launch':
+                return 'تاریخ عرضه';
+            case 'announced':
+                return 'زمان معرفی';
+            case 'status':
+                return 'وضعیت فعلی';
+            case 'body':
+                return 'بدنه';
+            case 'dimensions':
+                return 'ابعاد';
+            case 'weight':
+                return 'وزن';
+            case 'sim':
+                return 'نوع سیمکارت';
+            case 'size':
+                return 'اندازه';
+            case 'resolution':
+                return 'رزولوشن';
+            case 'platform':
+                return 'پلتفرم';
+            case 'os':
+                return 'سیستم عامل';
+            case 'chipset':
+                return 'پردازنده';
+            case 'cpu':
+                return 'مشخصات پرازنده';
+            case 'gpu':
+                return 'پردازنده گرافیکی';
+            case 'memory':
+                return 'حافظه';
+            case 'card_slot':
+                return 'خارجی';
+            case 'internal':
+                return 'داخلی و  رم';
+            case 'main camera':
+                return 'دوربین اصلی';
+            case 'quad':
+                return 'مشخصات ( تعداد دوربین)';
+            case 'selfie camera':
+                return 'دوربین سلفی';
+            case 'single':
+                return 'مشخصات ( تعداد دوربین)';
+            case 'video':
+                return 'فیلم برداری';
+            case 'sound':
+                return 'صدا';
+            case 'loudspeaker_':
+                return 'اسپیکر';
+            case '35mm_jack_':
+                return 'ورودی جک 3.5 میلیمتری';
+            case 'comms':
+                return 'ارتباطات';
+            case 'wlan':
+                return 'شبکه بی سیم';
+            case 'bluetooth':
+                return 'بلوتوث';
+            case 'gps':
+                return 'GPS';
+            case 'nfc':
+                return 'NFC';
+            case 'radio':
+                return 'رادیو';
+            case 'usb':
+                return 'USB';
+            case 'features':
+                return 'ویژگی ها';
+            case 'sensors':
+                return 'سنسورها';
+            case 'battery':
+                return 'باطری';
+            case 'type':
+                return 'نوع';
+            case 'charging':
+                return 'فناوری شارژ';
+            case 'misc':
+                return 'متفرقه';
+            case 'colors':
+                return 'رنگ';
+            case 'models':
+                return 'مدل ها';
+            case 'sar_eu':
+                return 'SAR - اتحادیه اروپا';
+            case 'tests':
+                return 'آزمون ها';
+            case 'performance':
+                return 'کارایی';
+            case 'display':
+                return 'صفحه نمایش';
+            case 'camera':
+                return 'دوربین';
+            case 'loudspeaker':
+                return 'اسپیکر';
+            case 'battery_life':
+                return 'عمر باطری';
+            case 'Yes':
+                return 'دارد';
+            case 'No':
+                return 'ندارد';
+            default:
+                return titre;
+        }
+    }
+
+    function make_matn_persian(cell1_content, titre, into, k, th, array, key_up, k1) {
+        if (key_up === 'main camera' && k1 < array.length) {
+            // console.log(k1);
+            cell1_content.style.direction = 'rtl';
+            return camera(into, array, k, th);
+        }
+        if (key_up === 'selfie camera' && k1 < array.length) {
+            // console.log(k1);
+            cell1_content.style.direction = 'rtl';
+            return camera(into, array, k, th);
+        }
+        if (key_up === 'battery' && titre === 'type') {
+            // console.log(k1);
+            cell1_content.style.direction = 'rtl';
+            return battery(into);
+        }
+        switch (titre) {
+            case 'status':
+                cell1_content.style.direction = 'rtl';
+                return status_announced(into);
+            case 'dimensions':
+                cell1_content.style.direction = 'rtl';
+                return dimen_mob(into, k, th);
+            case 'weight':
+                cell1_content.style.direction = 'rtl';
+                return weight_mob(into);
+            case 'size':
+                cell1_content.style.direction = 'rtl';
+                return inch_dimen(into);
+            case 'resolution':
+                cell1_content.style.direction = 'rtl';
+                return pixel_dimen(into);
+            case 'internal':
+                cell1_content.style.direction = 'rtl';
+                return memmory(into, array, k, th);
+            case 'loudspeaker_':
+                cell1_content.style.direction = 'rtl';
+                return loudspeaker_(into, array, k, th);
+            case 'features':
+                cell1_content.style.direction = 'rtl';
+                return feauture(into);
+            case '35mm_jack_':
+                cell1_content.style.direction = 'rtl';
+                return jack(into, k, th);
+            case 'usb':
+                cell1_content.style.direction = 'rtl';
+                return usb(into, k, th);
+            case 'charging':
+                cell1_content.style.direction = 'rtl';
+                return charging(into, k, th);
+            case 'nfc':
+                cell1_content.style.direction = 'rtl';
+                return nfc(into, k, th);
+            case 'radio':
+                // console.log('radio '+ k);
+                cell1_content.style.direction = 'rtl';
+                return radio(into, k, th);
+            case 'sim':
+                // console.log('radio '+ k);
+                cell1_content.style.direction = 'rtl';
+                return simcard(into, k, th);
+            case 'sensors':
+                // console.log('sensors '+ k);
+                cell1_content.style.direction = 'rtl';
+                return sensors(into, k, th);
+            case 'colors':
+                // console.log(k);
+                cell1_content.style.direction = 'rtl';
+                return color(into, k, th);
+            default :
+                return make_titre(into);
+        }
+    }
+
+    function make_result_show(tot_data) {
+        var obj = JSON.parse(JSON.stringify(tot_data[0]));
+        var obj1 = Object.values(obj);
+        // console.log(obj);
+        var title;
+        var img;
+        var count_row = 0;
+        var count_sh = 0;
+        var counter = 0;
+        let array;
+        for (var i = 0; i < obj1.length; i++) {
+            if (Object.keys(obj)[i] === 'title') {
+                document.getElementById('name_phone_en').innerText = obj1[i].toString();
+            } else if (Object.keys(obj)[i] === 'img') {
+                document.getElementById('image').src = obj1[i].toString();
+            } else if (Object.keys(obj)[i] === 'title_f') {
+                document.getElementById('name_phone').innerText = obj1[i].toString();
+            }else if (Object.keys(obj)[i] === '3D_url') {
+                document.getElementById('3D_i').src = obj1[i].toString();
+                document.getElementById('3D_i').style.display = 'block';
+            }else if (Object.keys(obj)[i] === 'img_det') {
+                console.log(Object.values(obj1[i]));
+
+                var size=Object.values(obj1[i]).length;
+                document.getElementById("expandedImg").src = Object.values(obj1[i])[0];
+                for(var k=0;k<Object.values(obj1[i]).length;k++){
+                    var itm = document.getElementById("column_image");
+                    var cln = itm.cloneNode(true);
+                    var img = cln.childNodes[1];
+                    img.src = Object.values(obj1[i])[k];
+                    // console.log(Object.values(obj1[i])[k]);
+                    if(Object.values(obj1[i]).length <= 4 ){
+                        cln.style.width = (100 / size) + '%';
+                    }else{
+                        cln.style.width = '25%';
+                    }
+
+                    document.getElementById("row_image").appendChild(cln);
+
+                    // cln.childNodes[1].click();
+                }
+                // document.getElementById('name_phone').innerText = obj1[i].toString();
+            } else {
+                var obj_data = obj1[i];
+                var obj_data1 = Object.values(obj_data);
+                for (var j = 0; j < obj_data1.length; j++) {
+                    counter = 0;
+                    var title_data = document.createElement("p");
+                    // var thead = document.createElement("thead");
+                    title_data.innerHTML = make_titre(Object.keys(obj_data)[j]);
+                    var tab_content = document.getElementById("tab-content3");
+                    tab_content.appendChild(title_data);
+                    var itm = document.getElementById("main_data");
+                    var cln = itm.cloneNode(true);
+                    var table_titer_con = cln.childNodes[1].childNodes[1];
+                    // console.log(table_titer_con.);
+                    var table_content = cln.childNodes[3];
+
+                    var obj_data_data = obj_data1[j];
+
+                    var obj_data1_data1 = Object.values(obj_data_data);
+                    count_row = obj_data1_data1.length;
+                    if (Object.keys(obj_data)[j] === 'body') {
+                        count_sh = 0;
+                    } else if (Object.keys(obj_data)[j] === 'memory') {
+                        count_sh = 1;
+                        array = [...obj_data1_data1[1].matchAll('[1-9]+(GB) [1-9]+(GB RAM)')];
+                        // console.log(array);
+                    } else if (Object.keys(obj_data)[j] === 'sound') {
+                        count_sh = 1;
+                    } else if (Object.keys(obj_data)[j] === 'features') {
+                        count_sh = 0;
+                    } else if (Object.keys(obj_data)[j] === 'main camera' || Object.keys(obj_data)[j] === 'selfie camera') {
+                        count_sh = 0;
+                        array = [...obj_data1_data1[0].matchAll('\\d{1,3}(\\.\\d{1,3})? (MP)(.|)+?(?=\\d{1,3}(\\.\\d{1,3})? (MP)|$)')];
+                        // console.log(array);
+                    }
+                    for (var k = 0; k < count_row; k++) {
+                        if (Object.keys(obj_data)[j] === 'body' && Object.keys(obj_data_data)[count_sh] === 'dimensions' && counter < 3) {
+                            count_row = Object.keys(obj_data_data).length + 2;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else if (Object.keys(obj_data)[j] === 'memory' && Object.keys(obj_data_data)[count_sh] === 'internal' && counter < array.length) {
+                            count_row = Object.keys(obj_data_data).length + array.length - 1;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else if (Object.keys(obj_data)[j] === 'sound' && Object.keys(obj_data_data)[count_sh] === '35mm_jack_' && counter < 2) {
+                            count_row = Object.keys(obj_data_data).length + 1;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else if (Object.keys(obj_data)[j] === 'features' && Object.keys(obj_data_data)[count_sh] === 'sensors' && counter < 3) {
+                            count_row = Object.keys(obj_data_data).length + 2;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else if (Object.keys(obj_data)[j] === 'main camera' && counter < array.length) {
+                            count_row = Object.keys(obj_data_data).length + array.length - 1;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else if (Object.keys(obj_data)[j] === 'selfie camera' && counter < array.length) {
+                            count_row = Object.keys(obj_data_data).length + array.length - 1;
+                            count_sh = k - counter;
+                            counter = counter + 1;
+                        } else {
+                            if (Object.keys(obj_data)[j] === 'body' && counter === 3) {
+                                count_sh = k - 2;
+                            } else if (Object.keys(obj_data)[j] === 'memory' && counter === array.length) {
+                                count_sh = k - (array.length - 1);
+                            } else if (Object.keys(obj_data)[j] === 'sound' && counter === array.length) {
+                                count_sh = k - (array.length - 1);
+                            } else if (Object.keys(obj_data)[j] === 'features' && counter === array.length) {
+                                count_sh = k - (array.length - 1);
+                            } else if (Object.keys(obj_data)[j] === 'main camera' && counter === array.length) {
+                                count_sh = k - (array.length - 1);
+                            } else if (Object.keys(obj_data)[j] === 'selfie camera' && counter === array.length) {
+                                count_sh = k - (array.length - 1);
+                            } else {
+                                count_sh = k;
+                            }
+                        }
+                        // if(Object.keys(obj_data)[j] === 'battery'){
+                        //     console.log(Object.keys(obj_data_data)[0]);
+                        //     console.log('count_sh:'+count_sh);
+                        //     console.log('K:'+k);
+                        //     console.log('counter:'+counter);
+                        //     console.log('obj_data1_data1:'+obj_data1_data1[count_sh]);
+                        // }
+                        if (obj_data1_data1[count_sh] !== '' && obj_data1_data1[count_sh] !== null && Object.keys
+                        (obj_data_data)[count_sh] !== 'price') {
+                            // console.log(Object.keys(obj_data)[j]);
+                            var tr = document.createElement("tr");
+                            var th = document.createElement("th");
+                            th.style.textAlign = 'center';
+                            th.style.direction = 'rtl';
+                            th.innerHTML = make_titre(Object.keys(obj_data_data)[count_sh]);
+                            tr.appendChild(th);
+                            table_titer_con.appendChild(tr);
+                            var row_content;
+                            if (table_content.rows.length < k) {
+                                row_content = table_content.insertRow(k - 1);
+                            } else {
+                                row_content = table_content.insertRow(k);
+                            }
+
+                            var cell1_content = row_content.insertCell(0);
+                            var value12 = make_matn_persian
+                            (cell1_content, Object.keys
+                            (obj_data_data)[count_sh], obj_data1_data1[count_sh], counter - 1, th, array, Object.keys(obj_data)[j], k);
+                            cell1_content.innerHTML = value12;
+                            if (value12 === '') {
+                                // console.log('sdds');
+                                if (table_content.rows.length <= k) {
+                                    row_content = table_content.deleteRow(k - 1);
+                                } else {
+                                    row_content = table_content.deleteRow(k);
+                                }
+                                table_titer_con.removeChild(tr);
+                            }
+                            // console.log();
+                            cell1_content.style.fontWeight = 'bold';
+                            // cell1_content.style.color = 'rgba(53, 59, 72, 0.85)';
+                            // if(cell1_content.innerHTML ){
+                            //     console.log(cell1_content.innerHTML);
+                            // }
+                            tab_content.appendChild(cln);
+                        }
+
+                        // console.log(Object.keys(obj_data)[j]+':'+Object.keys(obj_data_data)[k] + '\n' + obj_data1_data1[k]);
+                    }
+                    if (table_titer_con.offsetWidth + table_content.offsetWidth > cln.offsetWidth) {
+                        table_content.style.display = 'block';
+                    }
+                    // console.log(table_titer_con.offsetWidth);
+                    // console.log(table_content.offsetWidth);
+                    // console.log('cln:'+cln.offsetWidth);
+                }
+            }
+        }
+        setTimeout(function () {
+            var ovrl = document.getElementById("overlay");
+            ovrl.style.display = "none";
+        }, 500);
+        // console.log(tot_data);
+    }
+    function resize_we() {
+        // setTimeout(function () {
+        for(var i=0;i<2;i++){
+            resize();
+        }
+        // },600);
+    }
+    function resize(){
+        var x = document.getElementsByClassName("content_table");
+        var y = document.getElementsByClassName("fl1");
+        for (var i = 0; i < x.length; i++) {
+            if (i >= 1) {
+                if ((y[i].offsetWidth + x[i].childNodes[1].offsetWidth) > y[i].parentElement.offsetWidth) {
+                    x[i].style.display = 'block';
+                    // x[i].style.maxWidth = '90%';
+                } else if ((y[i].offsetWidth + x[i].childNodes[1].offsetWidth) <= y[i].parentElement.offsetWidth) {
+                    x[i].style.display = '';
+                    x[i].style.maxWidth = 'calc(100% - ' + y[i].offsetWidth + 'px)';
+                }
+            }
+        }
+    }
+    window.addEventListener('resize', function () {
+        resize();
+    });
+    var another_future = '';
+
+    function status_announced(into) {
+        if (into.includes('Available')) {
+            return 'در دسترس (' + into.substring(10, into.length) + ' )';
+        } else {
+            return 'عدم معرفی';
+        }
+    }
+    var size_abad;
+    function dimen_mob(into, k, th) {
+        // var tr = document.createElement("tr");
+        // var th = document.createElement("th");
+        // th.style.textAlign = 'center';
+        // th.style.direction = 'rtl';
+        // th.innerHTML = 'طول';
+        // tr.appendChild(th);
+        // table_titer_con.appendChild(tr);
+        // var row_content = tab_content.insertRow(1);
+        // var cell1_content = row_content.insertCell(0);
+        // cell1_content.innerText = 'sddsds';
+        // cell1_content.style.fontWeight = 'bold';
+        // cell1_content.style.color = 'rgba(53, 59, 72, 0.85)';
+        // console.log(k);
+        var res = into.match('\\d{1,3}(\\.\\d{1,3})? (x) \\d{1,3}(\\.\\d{1,3})? (x) \\d{1,3}(\\.\\d{1,3})?');
+
+
+        if (k === 0) {
+            size_abad = res[0].substring(0, res[0].indexOf('x')) + '×' +  res[0].substring(res[0].indexOf('x') + 1, res[0].indexOf('x', res[0].indexOf('x') + 1)) + '×' +
+                res[0].substring(res[0].indexOf('x', res[0].indexOf('x') + 1) + 1);
+            th.innerText = 'طول';
+            return res[0].substring(0, res[0].indexOf('x')) + ' میلی متر  ';
+        } else if (k === 1) {
+            th.innerText = 'عرض';
+            return res[0].substring(res[0].indexOf('x') + 1, res[0].indexOf('x', res[0].indexOf('x') + 1)) + ' میلی متر   ';
+        } else if (k === 2) {
+            th.innerText = 'ضخامت';
+            return res[0].substring(res[0].indexOf('x', res[0].indexOf('x') + 1) + 1) + ' میلی متر';
+        }
+        // return 'طول: '+res[0].substring(0,res[0].indexOf('x')) + ' میلی متر  ' + 'عرض:' + res[0].substring(res[0].indexOf('x') + 1,res[0].indexOf('x',res[0].indexOf('x')+1)) + ' میلی متر   '
+        //     + 'ضخامت:' + res[0].substring(res[0].indexOf('x',res[0].indexOf('x') + 1) + 1) + ' میلی متر';
+    }
+    resize();
+    function color(into) {
+        var str = '';
+        var res = [...into.matchAll('(?=,|).+?(?=,|$)')];
+        console.log(res);
+        for (var i = 0; i < res.length; i++) {
+            if (res[i][0].includes(',')) {
+                if (str[str.length - 2] !== ('،') && str.length > 1) {
+                    console.log(str[str.length - 2]);
+                    str += ' ، ';
+                }
+                str += color_find(res[i][0].substring(2));
+            } else {
+                if (res[i][0][length - 2] === (',') && i !== res.length - 1 && str.length > 1) {
+                    str += ' ، ';
+                }
+                str += color_find(res[i][0]) + ' ، ';
+            }
+        }
+        return str;
+    }
+
+    function weight_mob(into) {
+        return into.substring(0, into.indexOf(' g ')) + ' گرم';
+    }
+
+
+    function inch_dimen(into) {
+        document.getElementById('mob_size').innerHTML += 'صفحه نمایش'+'<br/>'+text_change_color('#880005',into.substring(0, into.indexOf(' inches,'))+ '"','IRANSansWeb_Light')+'<br/>'+ 'ابعاد'+'<br/>'+text_change_color('#880005',size_abad,'IRANSansWeb_Light');
+        var res = into.match('(~)\\d{1,3}(\\.\\d{1,3})?(%) screen-to-body ratio');
+        return into.substring(0, into.indexOf(' inches,')) + ' اینچ ( نسبت صفحه نمایش به بدنه : حدود ' + res[0].substring(1, res[0].indexOf('% screen-to-body ratio')) + ' درصد )';
+    }
+    function text_change_color(color,text,font){
+        // var str = String(text);
+        // var str1=str.;
+        // return str1.fontcolor(color);
+        return '<span style="color:'+color+';font-family:'+font+';font-size: large">'+text+'</span>';
+    }
+    function memmory(into, array, k, th) {
+        // var str = '';
+        // k+1;
+        // console.log(array[k]);
+        if(k===0){
+            document.getElementById('storage_ram').innerText = 'حافظه'+'\n';
+            document.getElementById('storage_ram').innerText += array[k][0].substring(0, array[k][0].indexOf('GB'))+'-';
+            console.log(document.getElementById('storage_ram').innerText.toString().substring(document.getElementById('storage_ram').innerText.indexOf('حافظه') + 6
+                ,document.getElementById('storage_ram').innerText.indexOf('-')) +'sddsds'+array[array.length - 1][0].substring(0, array[array.length - 1][0].indexOf('GB')));
+            if(document.getElementById('storage_ram').innerText.toString().substring(document.getElementById('storage_ram').innerText.indexOf('حافظه') + 6
+                ,document.getElementById('storage_ram').innerText.indexOf('-')) !== array[array.length - 1][0].substring(0, array[array.length - 1][0].indexOf('GB'))){
+                document.getElementById('storage_ram').innerHTML = 'حافظه'+ '<br/>' + text_change_color('#880005',array[k][0].substring(0, array[k][0].indexOf('GB'))+'-' +
+                    array[array.length - 1][0].substring(0, array[array.length - 1][0].indexOf('GB')).toString(),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' GB','IRANSansWeb_Light') + '<br/>';
+            }else{
+                document.getElementById('storage_ram').innerHTML ='حافظه'+'<br/>' + text_change_color('#880005',array[k][0].substring(0, array[k][0].indexOf('GB')),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' GB','IRANSansWeb_Light') + '<br/>';
+            }
+            document.getElementById('storage_ram').innerHTML += 'رم'+'<br/>';
+            document.getElementById('storage_ram').innerHTML += text_change_color('#880005',array[k][0].substring(array[k][0].indexOf('GB ') + 3, array[k][0].indexOf('GB', array[k][0].indexOf('GB ') + 1)),'IRANSansWeb_Light');
+            if(document.getElementById('storage_ram').innerText.toString().substring(document.getElementById('storage_ram').innerText.indexOf('رم') + 3)
+                !== array[array.length - 1][0].substring(array[array.length - 1][0].indexOf('GB ') + 3, array[array.length - 1][0].indexOf('GB', array[array.length - 1][0].indexOf('GB ') + 1))){
+                document.getElementById('storage_ram').innerHTML += text_change_color('#880005','-' +
+                    array[array.length - 1][0].substring(array[array.length - 1][0].indexOf('GB ') + 3, array[array.length - 1][0].indexOf('GB', array[array.length - 1][0].indexOf('GB ') + 1)),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' GB','IRANSansWeb_Light');
+            }else{
+                document.getElementById('storage_ram').innerHTML += text_change_color('rgba(53,59,72,0.57)',' GB','IRANSansWeb_Light') + '\n';
+            }
+        }
+        th.innerText = 'مدل ' + (k + 1);
+        var cln1 = document.getElementById('tabd_main').cloneNode(true);
+        // console.log(cln1);
+        cln1.childNodes[1].childNodes[1].innerText = array[k][0].substring(0, array[k][0].indexOf('GB')) + ' GB';
+        cln1.childNodes[1].childNodes[3].innerText = array[k][0].substring(array[k][0].indexOf('GB ') + 3, array[k][0].indexOf('GB', array[k][0].indexOf('GB ') + 1)) + ' GB';
+        document.getElementById('price_main').appendChild(cln1);
+        cln1.childNodes[1].click();
+        return array[k][0].substring(0, array[k][0].indexOf('GB')) + ' گیگابایت حافظه داخلی ' + array[k][0].substring(array[k][0].indexOf('GB ') + 3, array[k][0].indexOf('GB', array[k][0].indexOf('GB ') + 1)) + ' گیگابایت رم';
+        // return into.substring(0, into.indexOf(' inches,')) + ' اینچ ( نسبت صفحه نمایش به بدنه : حدود ' + res[0].substring(1, res[0].indexOf('% screen-to-body ratio')) + ' درصد )';
+    }
+
+    function camera(into, array, k, th) {
+        // var str = '';
+        // k+1;
+        // console.log(array[k]);
+        if(k=== 0 && document.getElementById('camera_title').innerText){
+
+            document.getElementById('camera_title').innerHTML += '<br/>'+'دوربین سلفی'+'<br/>'+ text_change_color('#880005',array[k][0].substring(0, array[k][0].indexOf(' MP')),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' MP','IRANSansWeb_Light');
+        }else if(k=== 0){
+            document.getElementById('camera_title').innerHTML ='دوربین اصلی'+'<br/>'+text_change_color('#880005',array[k][0].substring(0, array[k][0].indexOf(' MP')),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' MP','IRANSansWeb_Light');
+        }
+        th.innerText = 'دوربین ' + (k + 1);
+        if(array[k][0].indexOf(' MP,') !== -1 ){
+            console.log(array[k][0].indexOf(' MP,'));
+            return array[k][0].substring(0, array[k][0].indexOf(' MP')) + ' مگاپیکسل ( ' + array[k][0].substring(array[k][0].indexOf(' MP,') + 4) + ') ';
+        }else{
+            return array[k][0].substring(0, array[k][0].indexOf(' MP')) + ' مگاپیکسل';
+        }
+
+        // return into.substring(0, into.indexOf(' inches,')) + ' اینچ ( نسبت صفحه نمایش به بدنه : حدود ' + res[0].substring(1, res[0].indexOf('% screen-to-body ratio')) + ' درصد )';
+    }
+
+    function loudspeaker_(into) {
+        if (into === 'Yes, with stereo speakers') {
+            return 'دارد، به همراه اسپیکر استریو'
+        } else if (into === 'Yes') {
+            return 'دارد'
+        } else {
+            return into
+        }
+    }
+
+    function battery(into) {
+        var stri = '';
+        // console.log(into);
+        var mah = into.match('\\d{1,5}(\\.\\d{1,5})? (mAh)');
+        var wh = into.match('\\d{1,6}(\\.\\d{1,6}) (Wh)');
+        if (into.includes('Li-Po')) {
+            stri += 'لیتیوم پلیمر';
+        } else if (into.includes('Li-Ion')) {
+            stri += 'لیتیوم یون';
+        }
+        if (mah !== null) {
+            // console.log(stri[stri.length - 2]);
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += mah[0].substring(0, mah[0].indexOf(' mAh')) + ' میلی آمپر ساعت';
+            document.getElementById('battery').innerHTML = 'ظرفیت'+'<br/>'+ text_change_color('#880005',mah[0].substring(0, mah[0].indexOf(' mAh')),'IRANSansWeb_Light') +text_change_color('rgba(53,59,72,0.57)',' mAh','IRANSansWeb_Light');
+        }
+        if (wh !== null) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+
+            stri += wh[0].substring(0, wh[0].indexOf(' Wh')) + ' وات ساعت';
+        }
+        if (into.includes('non-removable')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'غیر قابل تعویض';
+        } else if (into.includes('removable')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'قابل تعویض';
+        }
+        return stri;
+    }
+
+    function simcard(into) {
+        // Single SIM (Nano-SIM and/or eSIM) or Hybrid Dual SIM (Nano-SIM, dual stand-by)
+        var stri = '';
+        if (into.includes('Single SIM')) {
+            stri += 'تک سیم کارت ';
+        }
+        if (into.includes('Nano-SIM and/or eSIM')) {
+            if (stri.length > 1) {
+                stri += ' ( ';
+            }
+            stri += 'Nano SIM و (یا) eSIM';
+            // console.log(stri[stri.indexOf('Nano SIM و (یا) eSIM')]);
+            if (stri[stri.indexOf('Nano SIM و (یا) eSIM') - 2] !== undefined) {
+                stri += ' ) ';
+            }
+        }
+        if (into.includes(' or ')) {
+            stri += ' یا ';
+        }
+        if (into.includes('Hybrid Dual SIM')) {
+            stri += 'دو سیم کارت هیبرید ';
+        } else if (into.includes('Dual SIM')) {
+            stri += 'دو سیم کارت ';
+        }
+        if (into.includes('(Nano-SIM, dual stand-by)')) {
+            stri += '(Nano SIM , هر دو سیم کارت همزمان فعال)';
+        }
+        //anoter
+        // IP68 dust/water resistant
+        var water_ip = into.match('IP\\d{1,5}(\\.\\d{1,5})? dust/water resistant');
+        var mwter_res = into.match('up to \\d{1,5}(\\.\\d{1,5})?m for \\d{1,5}(\\.\\d{1,5})? mins');
+        var mwter_res_h = into.match('up to \\d{1,5}(\\.\\d{1,5})?m for \\d{1,5}(\\.\\d{1,5})? hour');
+        var latency_res = into.match('\\d{1,5}(\\.\\d{1,5})?ms latency');
+        if (into.includes('dust/water resistant')) {
+            another_future += 'دارای گواهینامه ' + water_ip[0].substring(0, water_ip[0].indexOf('dust/water resistant') - 1) +
+                ' مقاومت در برابر آب و گرد و غبار ';
+        }
+        if (into.includes('splash-proof')) {
+            another_future += 'مقاومت در برابر ذرات آب ';
+        }
+        if (into.includes('up to')) {
+            if(mwter_res){
+                another_future += '( تا ' + mwter_res[0].substring(mwter_res[0].indexOf('up to') + 6, mwter_res[0].indexOf('m for'))
+                    + ' متر برای ' + mwter_res[0].substring(mwter_res[0].indexOf('m for') + 6, mwter_res[0].indexOf(' mins')) + ' دقیقه ) ';
+            }else{
+                another_future += '( تا ' + mwter_res_h[0].substring(mwter_res_h[0].indexOf('up to') + 6, mwter_res_h[0].indexOf('m for'))
+                    + ' متر برای ' + mwter_res_h[0].substring(mwter_res_h[0].indexOf('m for') + 6, mwter_res_h[0].indexOf(' hour')) + ' ساعت ) ';
+            }
+
+        }
+        if (into.includes('Water-repellent coating')) {
+            another_future += 'پوشش ضدآب ';
+        }
+        if (into.includes('Stylus')) {
+            if(another_future.length > 0){
+                another_future += ' ، ';
+            }
+            another_future += 'قلم استایلوس ';
+        }
+        if (into.includes('latency')) {
+            another_future += latency_res[0].substring(0, latency_res[0].indexOf('ms latency')) + ' میلی ثانیه تاخیر '
+        }
+        if (into.includes('(Bluetooth integration, accelerometer, gyro)')) {
+            another_future += '(بلوتوث ، شتاب سنج ، ادغام سازی ، ژیروسکوپ )';
+        }
+        return stri;
+    }
+
+    function sensors(into, k, th) {
+        var stri = '';
+        if (k === 0) {
+            th.innerText = 'سنسورها';
+            if (into.includes('Fingerprint') || into.includes('fingerprint')) {
+                stri += 'اثرانگشت ';
+            }
+            if (into.includes('under display')) {
+                stri += '( زیر صفحه';
+            } else if (into.includes('side-mounted')) {
+                stri += '( کنار گوشی';
+            } else if (into.includes('rear-mounted')) {
+                stri += '( پشت گوشی';
+            } else if (into.includes('front-mounted')) {
+                stri += '( روی گوشی';
+            }
+            if (into.includes('optical')) {
+                stri += ' ، اپتیکال ) ، ';
+            } else if (into.includes('ultrasonic')) {
+                stri += ' ، اولتراسونیک ) ، ';
+            } else if (into.includes('Fingerprint')) {
+                stri += ' ) ، ';
+            }
+            if (into.includes('accelerometer') || into.includes('Accelerometer')) {
+                stri += 'شتاب سنج';
+            }
+            if (into.includes('proximity')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'مجاورت';
+            }
+            if (into.includes('gyro')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'ژیروسکوپ';
+            }
+            if (into.includes('compass')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'قطب نما';
+            }
+            if (into.includes('barometer')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'فشارسنج';
+            }
+            if (into.includes('Face ID')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'Face ID';
+            }
+            return stri;
+        } else if (k === 1) {
+            th.innerText = 'اضافی';
+            if (into.includes('Samsung Wireless DeX')) {
+                stri += 'Samsung Wireless DeX';
+            }
+            if (into.includes('Samsung DeX')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'Samsung DeX';
+            }
+            if (into.includes('desktop experience support')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += '  ';
+                }
+                stri += '(پشتیبانی از تجربه دسکتاپ)';
+            }
+            if (into.includes('ANT+')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'ANT+';
+            }
+            if (into.includes('siri')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'siri';
+            }
+            if (into.includes('Bixby')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'Bixby';
+            }
+            if (into.includes('natural language commands and dictation')) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'پشتیبانی از دستورات و تبدیل گفتار به نوشتار به زبان محلی';
+            }
+            return stri;
+        } else if (k === 2) {
+            th.innerText = 'سایر';
+            return another_future;
+        }
+    }
+
+    function usb(into) {
+        // var stri = '';
+        return into.replace(", USB On-The-Go", " ، قابلیت OTG");
+    }
+
+    function charging(into) {
+        // Fast charging 20W, 50% in 30 min (advertised)  USB Power Delivery 2.0  Qi fast wireless charging 15W
+        var stri = '';
+        var fast = into.match('Fast charging \\d{1,5}(\\.\\d{1,5})?(W)');
+        var Charging = into.match('Charging \\d{1,5}(\\.\\d{1,5})?(W)');
+        var advertised = [...into.matchAll(' \\d{1,5}(\\.\\d{1,5})?% in \\d{1,5}(\\.\\d{1,5})? min ')];
+        // var advertised = into.match(' \\d{1,5}(\\.\\d{1,5})?% in \\d{1,5}(\\.\\d{1,5})? min ');
+        var USBPowerDelivery = into.match('USB Power Delivery \\d{1,5}(\\.\\d{1,5})?');
+        var fastwirelesscharging = [...into.matchAll('wireless charging \\d{1,5}(\\.\\d{1,5})?(W)')];
+        var Reversecharging = into.match('Reverse charging \\d{1,5}(\\.\\d{1,5})?(W)');
+        var QuickCharge = into.match('Quick Charge \\d{1,5}(\\.\\d{1,5})?');
+        console.log(fastwirelesscharging);
+        if (into.includes('Fast charging')) {
+            if(fast){
+                stri += 'شارژ سریع ' + fast[0].substring(fast[0].indexOf('charging') + 9, fast[0].indexOf('W')) + ' وات';
+                document.getElementById('battery').innerHTML +='<br/>'+ 'توان شارژ'+'<br/>'+ text_change_color('#880005',fast[0].substring(fast[0].indexOf('charging') + 9, fast[0].indexOf('W')),'IRANSansWeb_Light') +text_change_color('rgba(53,59,72,0.57)',' W','IRANSansWeb_Light');
+            }else{
+                stri += 'شارژ سریع ';
+            }
+        } else if (into.includes('Charging')) {
+            stri += 'شارژ ' + Charging[0].substring(Charging[0].indexOf('Charging') + 9, Charging[0].indexOf('W')) + ' وات';
+            document.getElementById('battery').innerHTML +='<br/>'+ 'توان شارژ'+'<br/>'+ text_change_color('#880005',Charging[0].substring(Charging[0].indexOf('Charging') + 9, Charging[0].indexOf('W')),'IRANSansWeb_Light') + text_change_color('rgba(53,59,72,0.57)',' W','IRANSansWeb_Light');
+        }
+        if (into.includes('advertised')) {
+            console.log(advertised);
+            for (var i = 0; i < advertised.length; i++) {
+                if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += advertised[i][0].substring(0, advertised[i][0].indexOf('%')) + ' درصد شارژ در' + advertised[i][0].substring(advertised[i][0].indexOf('in') + 2, advertised[i][0].indexOf(' min')) +
+                    ' دقیقه';
+            }
+            stri += ' (به گفته تولید کننده)';
+        }
+        if (into.includes('Reverse charging')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            if (Reversecharging != null) {
+                stri += 'شارژ معکوس ' + Reversecharging[0].substring(Reversecharging[0].indexOf('charging') + 9, Reversecharging[0].indexOf('W')) + ' وات';
+            } else {
+                stri += 'شارژ معکوس ';
+            }
+        }
+        if (into.includes('USB Power Delivery')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            if (USBPowerDelivery != null) {
+                stri += 'پشتیبانی از ' + USBPowerDelivery[0];
+            } else {
+                stri += 'USB Power Delivery';
+            }
+
+        }
+        if (into.includes('Quick Charge')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'پشتیبانی از ' + QuickCharge[0];
+        }
+        if (into.includes('Warp Charge 30T')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'پشتیبانی از ' + 'Warp Charge 30T';
+        }
+
+        // Qi
+        // Qi magnetic fast
+        // Reverse
+        // Fast Qi/PMA
+        // Fast
+        if (into.includes('Qi magnetic fast')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'شارژ بیسیم سریع مغناطیسی ' + fastwirelesscharging[0][0].substring(fastwirelesscharging[0][0].indexOf('charging') + 9, fastwirelesscharging[0][0].indexOf('W')) + ' وات' + ' Qi ';
+        } else if (into.includes('Fast Qi/PMA')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'شارژ بیسیم سریع ' + fastwirelesscharging[0][0].substring(fastwirelesscharging[0][0].indexOf('charging') + 9, fastwirelesscharging[0][0].indexOf('W')) + ' وات' + ' Qi/PMA ';
+        }
+        if (into.includes('Qi fast')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'شارژ بیسیم سریع ' + fastwirelesscharging[0][0].substring(fastwirelesscharging[0][0].indexOf('charging') + 9, fastwirelesscharging[0][0].indexOf('W')) + ' وات' + ' Qi ';
+        } else if (into.includes('Fast wireless charging')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'شارژ بیسیم سریع ' + fastwirelesscharging[0][0].substring(fastwirelesscharging[0][0].indexOf('charging') + 9, fastwirelesscharging[0][0].indexOf('W')) + ' وات';
+        }
+        if (into.includes('Reverse wireless charging')) {
+            if (stri[stri.length - 2] !== ',' && stri.length > 1) {
+                stri += ' ، ';
+            }
+            if(fastwirelesscharging.length > 1){
+                // console.log(fastwirelesscharging.length >);
+                stri += 'شارژ بیسیم معکوس ' + fastwirelesscharging[1][0].substring(fastwirelesscharging[1][0].indexOf('charging') + 9, fastwirelesscharging[1][0].indexOf('W')) + ' وات';
+            }else{
+                stri += 'شارژ بیسیم معکوس ' ;
+            }
+
+        }
+        return stri;
+    }
+
+    function radio(into) {
+        var stri = '';
+        if (into.includes('Wireless FM radio')) {
+            if (stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'رادیو FM بیسیم';
+        } else if (into.includes('FM radio')) {
+            stri += 'رادیو FM ';
+        } else if (into.includes('No')) {
+            stri += 'ندارد';
+        }
+        if (into.includes('recording')) {
+            if (stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'قابلیت ضبط';
+        }
+        if (into.includes('RDS')) {
+            if (stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'RDS';
+        }
+        if (into.includes('built-in antenna')) {
+            if (stri.length > 1) {
+                stri += ' ، ';
+            }
+            stri += 'آنتن داخلی';
+        }
+        if (into.includes('Snapdragon model only')) {
+            stri += '( تنها مدل اسنپدراگون';
+        }
+        if (into.includes('market/operator dependent')) {
+            if (stri.includes('(')) {
+                stri += ' ، ';
+            } else {
+                stri += ' ) ';
+            }
+            stri += 'وابسته به اپراتور و یا بازار';
+        }
+        if (into.includes('no wired headphones required')) {
+            if (stri.includes('(')) {
+                stri += ' ، ';
+            } else {
+                stri += ' ( ';
+            }
+            stri += 'بدون نیاز به سیم هدفون';
+        }
+        if (into.includes('market/region dependent')) {
+            if (stri.includes('(')) {
+                stri += ' ، ';
+            } else {
+                stri += ' ) ';
+            }
+            stri += 'وابسته به بازار و یا منطقه جغرافیایی';
+        } else if (into.includes(')')) {
+            stri += ' ) ';
+        }
+        return stri;
+    }
+
+    function jack(into, k, th) {
+        var stri = '';
+        if (k === 0) {
+            th.innerText = 'ورودی جک 3.5 میلیمتری';
+            if (into.includes('Yes')) {
+                stri += 'دارد ';
+            }
+            if (into.includes('No')) {
+                stri += 'ندارد ';
+            }
+            return stri;
+        } else {
+            th.innerText = 'ویژگی ها';
+            if (into.includes('32-bit/384kHz audio')) {
+                if (stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += '۳۲ بیت / ۳۸۴ کیلو هرتز';
+            }
+            if (into.includes('24-bit/192kHz audio')) {
+                if (stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += '۲۴ بیت / ۱۹۲ کیلو هرتز';
+            }
+            if (into.includes('32-bit/192kHz audio')) {
+                if (stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += '۳۲ بیت / ۱۹۲ کیلو هرتز';
+            }
+            if (into.includes('Tuned by AKG')) {
+                if (stri.length > 1) {
+                    stri += ' ، ';
+                }
+                stri += 'تنظیم شده به وسیله AKG';
+            }
+            return stri;
+        }
+
+    }
+
+    function nfc(into) {
+        var stri = '';
+        if (into.includes('Yes')) {
+            stri += 'دارد';
+        } else if (into.includes('No')) {
+            stri += 'ندارد';
+        }
+        if (into.includes('market/region')) {
+            if (stri.length > 1) {
+                stri += ' ( ';
+            }
+            stri += 'وابسته به بازار و منطقه )';
+        } else if (into.includes('market')) {
+            if (stri.length > 1) {
+                stri += ' ( ';
+            }
+            stri += 'وابسته به بازار )';
+        } else if (into.includes('region')) {
+            if (stri.length > 1) {
+                stri += ' ( ';
+            }
+            stri += 'وابسته به منطقه )';
+        }
+        return stri;
+    }
+
+    function feauture(into) {
+        var stri = '';
+        if (into.includes('LED flash')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'فلاش LED';
+        }
+        if (into.includes('panorama')) {
+            if (stri.length > 1) {
+                stri += '، ';
+            }
+            stri += 'پانوراما';
+        }
+        if (into.includes('HDR')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'HDR';
+        }
+        if (into.includes('Dual-LED')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'فلش ' + ' LED' + ' دو گانه ';
+        }
+        if (into.includes('auto-HDR')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'HDR' + ' خودکار';
+        }
+        if (into.includes('Quad-LED dual-tone flash')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'فلش ' + 'LED' + ' چهار گانه دو رنگ';
+        }
+        if (into.includes('Dual-LED dual-tone flash')) {
+            if (stri.length > 1) {
+                stri += ' ،';
+            }
+            stri += 'فلش ' + 'LED' + ' دو گانه دو رنگ';
+        }
+        return stri;
+    }
+
+    function pixel_dimen(into) {
+        var res = into.match('\\d{1,6}(\\.\\d{1,6})? (x) \\d{1,6}(\\.\\d{1,6})? (pixels)');
+        var res1 = into.match('~\\d{1,3}(\\.\\d{1,3})? ppi density');
+        // console.log(res);
+        // console.log(res1);
+        // var r=res[0].substring(0,res[0].indexOf(' pixels'));
+        // r.style.direction = 'ltr';
+        return res[0].substring(0, res[0].indexOf('x')) + '×' + res[0].substring(res[0].indexOf('x') + 1, res[0].indexOf(' pixels')) + ' پیکسل ( تراکم پیکسلی : حدود ' + res1[0].substring(1, res1[0].indexOf(' ppi density')) + ' ppi )';
+    }
+
+    function color_find(color) {
+        switch (color) {
+            case "Aurora Blue":
+                return 'آبی شفق قطبی';
+            case "Cosmic Gray":
+                return 'خاکستری کیهانی';
+            case "Dream White":
+                return 'سفید رویایی';
+            case "Black":
+                return 'سیاه';
+            case "Crush Blue":
+                return 'آبی خرد شده';
+            case "Midsummer Purple":
+                return 'ارغوانی نیمه تابستان';
+            case "Crush Green":
+                return 'سبز خرد شده';
+            case "Breathing Crystal":
+                return 'تنفس بلوری (آبی یخی)';
+            case "Midnight Black":
+                return 'سیاه نیمه شب';
+            case "Glacier White":
+                return 'سفید یخچالی';
+            case "Interstellar Gray":
+                return 'خاکستری میان ستاره ای';
+            case "Blue":
+                return 'آبی';
+            case "Red":
+                return 'قرمز';
+            case "Sapphire Blue":
+                return 'آبی یاقوتی';
+            case "Amber Brown":
+                return 'قهوه ای کهربایی';
+            case "Aura Glow":
+                return 'براق تشعشعی (سفید،آبی یخی)';
+            case "Aura Black":
+                return 'براق سیاه';
+            case "Aura Red":
+                return 'براق قرمز';
+            case "Matte Space Gray":
+                return 'خاکستری مات فضایی';
+            case "Matte Silver":
+                return 'نقره ای مات';
+            case "Matte Gold":
+                return 'طلایی مات';
+            case "Matte Midnight Green":
+                return 'سبز مات نیمه شب';
+            case "Carbon Gray":
+                return 'خاکستری کربنی';
+            case "Sky Blue":
+                return 'آبی آسمانی';
+            case "Ocean Green":
+                return 'سبز اقیانوسی';
+            case "Cosmic Black":
+                return 'سیاه کیهانی';
+            case "Cloud Blue":
+                return 'آبی ابری';
+            case "Cloud White":
+                return 'سفید ابری';
+            case "Aura Blue":
+                return 'براق آبی';
+            case "Blue Marble":
+                return 'سنگ مرمر آبی';
+            case "Gray Onyx":
+                return 'عقیق خاکستری';
+            case "Cobalt Blue":
+                return 'آبی کبالتی';
+            case "Shadow Gray":
+                return 'سایه خاکستری';
+            case "Midnight Gray":
+                return 'خاکستری نیمه شب';
+            case "Sunrise Orange":
+                return 'نارنجی طلوع';
+            case "Twilight Blue":
+                return 'آبی گرگ و میش';
+            case "Coral Green":
+                return 'سبز مرجانی';
+            case "Twilight Grey":
+                return 'خاکستری گرگ و میش';
+            case "Peach Gold":
+                return 'طلایی هلویی';
+            case "Gold":
+                return 'طلایی';
+            case "Nebula Purple":
+                return 'ارغوانی سحابی';
+            case "Glacial Green":
+                return 'سبز یخچالی';
+            case "Ultramarine Blue":
+                return 'آبی لاجوردی';
+            case "Onyx Black":
+                return 'عقیق سیاه';
+            case "Interstellar Glow":
+                return 'براق میان کهکشانی (صورتی کم رنگ مایل به سفید)';
+            case "Polar Silver":
+                return 'نقره ای قطبی';
+            case "Space Blue":
+                return 'آبی فضایی';
+            case "Neon Blue":
+                return 'آبی نئون';
+            case "Phantom White":
+                return 'سفید خیالی (شبح سفید)';
+            case "Electric Purple":
+                return 'ارغوانی الکتریکی';
+            case "Cyber Gray":
+                return 'خاکستری سایبری';
+            case "Prism Cube Black":
+                return 'سیاه مکعب منشوری';
+            case "Prism Cube White":
+                return 'سفید مکعب منشوری';
+            case "Prism Cube Pink":
+                return 'صورتی مکعب منشوری';
+            case "Ocean Blue":
+                return 'آبی اقیانوسی';
+            case "Space Black":
+                return 'سیاه فضایی';
+            case "Metallic Blue":
+                return 'آبی متالیک';
+            case "Violet":
+                return 'بنفش';
+            case "Frosted Silver":
+                return 'نقره ای یخی';
+            case "Glacier Blue":
+                return 'آبی یخچالی';
+            case "White":
+                return 'سفید';
+            case "Aurora Green":
+                return 'سبز شفق قطبی';
+            case "Prism White":
+                return 'سفید منشوری';
+            case "Prism Black":
+                return 'سیاه منشوری';
+            case "Prism Blue" :
+                return 'آبی منشوری';
+            case "Prism Crush Black":
+                return 'سیاه خرد شده منشوری';
+            case "Prism Crush Blue":
+                return 'آبی خرد شده منشوری';
+            case "Prism Crush Red":
+                return 'قرمز خرد شده منشوری';
+            case "Prism Crush White":
+                return 'سفید خرد شده منشوری';
+            case "Green":
+                return 'سبز';
+            case "Electric Blue":
+                return 'آبی الکتریکی';
+            case "Celestial Black":
+                return 'سیاه کریستالی';
+            case "Cosmic Grey":
+                return 'خاکستری کیهانی';
+            case "Cloud Pink":
+                return 'صورتی ابری';
+            case "Prism Crush Pink":
+                return 'صورتی خرد شده منشوری';
+            case "Prism Crush Silver":
+                return 'نقره ای خرد شده منشوری';
+            case "Polar White":
+                return 'نقره ای سفید';
+            case "Forest Green":
+                return 'سبز جنگلی';
+            case "Mystic Green":
+                return 'سبز عرفانی';
+            case "Mystic Bronze":
+                return 'برنز عرفانی';
+            case "Mystic Gray":
+                return 'خاکستری عرفانی';
+            case "Mystic Red":
+                return 'قرمز عرفانی';
+            case "Mystic Blue":
+                return 'آبی عرفانی';
+            case "Mystic Black":
+                return 'سیاه عرفانی';
+            case "Mystic White":
+                return 'سفید عرفانی';
+            case "Tropical Green":
+                return 'سبز گرمسیری';
+            case "Sunset Purple":
+                return 'ارغوانی غروب آفتاب';
+            case "Pink/Blue":
+                return 'صورتی/آبی';
+            case "Deep Sea Blue":
+                return 'آبی دریای عمیق';
+            case "Midnight Blue":
+                return 'آبی نیمه شب';
+            case "Twilight Orange":
+                return 'نارنجی گرگ و میش';
+            case "Ruby Red":
+                return 'قرمز یاقوتی';
+            case "Phantom Red":
+                return 'قرمز فانتوم';
+            case "More than White":
+                return 'بیشتر از سفید';
+            case "Not just Blue":
+                return 'نه فقط آبی';
+            case "Kind of Gray":
+                return 'نوعی خاکستری';
+            case "Graphite":
+                return 'گرافیتی';
+            case "Silver":
+                return 'نقره ای';
+            case "Pacific Blue":
+                return 'آبی اقیانوس آرام';
+            case "Moonlight White":
+                return 'سفید مهتابی';
+            case "Neptune Blue":
+                return 'آبی نپتونی';
+            case "Cosmic Purple":
+                return 'ارغوانی کیهانی';
+            default :
+                return color;
+        }
+    }
+
+    setTimeout(function () {
+        document.getElementById("tab3").click();
+    },500);
+
+
+
+
+    function updateValue(input) {
+        var transform = `scaleY(${((input.value-50) * .0125)+1 }) scaleX(${1-((input.value-50) * .006)}) translate(-${(input.value-50)*.3}%, -${(input.value-50) * .4}%)`;
+        var gradient = `linear-gradient(to right, hsl(${input.value*.5}, 50%, 50%), hsl(${input.value}, 70%, 70%))`;
+        input.style.background = gradient;
+        document.querySelector('.happiness__header').style.background = gradient;
+        document.querySelector('.happiness__emoji--eyeL').style.transform = `${(input.value<50 ) ? 'none': transform }`;
+        document.querySelector('.happiness__emoji--eyeR').style.transform = `${(input.value<50 ) ? 'none': transform }`;
+        document.querySelector('.happiness__emoji--eyeL .happiness__emoji--eyeBrew').style.height = `${30+((50-input.value)*.3)}%`;
+        document.querySelector('.happiness__emoji--eyeR .happiness__emoji--eyeBrew').style.height = `${30+((50-input.value)*.3)}%`;
+        document.querySelector('.happiness__emoji--eyeL .happiness__emoji--eyeBrew').style.opacity = `${((50-input.value)*.02)}`;
+        document.querySelector('.happiness__emoji--eyeR .happiness__emoji--eyeBrew').style.opacity = `${((50-input.value)*.02)}`;
+        document.querySelector('.happiness__emoji--mouth').style.transform = `scale(${(input.value-50) >= 0 ? 1 : -1})`;
+        document.querySelector('.happiness__emoji--mouth').style.borderRadius = `0 0 ${Math.abs(input.value-50)}% ${Math.abs(input.value-50)}%`;
+        document.querySelector('.happiness__emoji--mouth').style.bottom = `${30 - ((input.value-50)*.1)}%`;
+    }
+    const TOGGLE_THEME = document.querySelector('.dark');
+    const TOGGLE_TEXT_THEME = document.querySelector('.addonz-switch-inner');
+    const BADGE_COLOR = document.querySelectorAll('.badge-color');
+    const TOGGLE_COLLAPSE = document.querySelector('.collapse-repply');
+
+    // Toggle text theme selected
+
+    TOGGLE_THEME.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+        if (TOGGLE_TEXT_THEME.textContent === 'Light') {
+            TOGGLE_TEXT_THEME.textContent = 'Dark';
+        }else{
+            TOGGLE_TEXT_THEME.textContent = 'Light';
+        }
+    });
+
+    // Badge theme colors
+
+    BADGE_COLOR.forEach(el => {
+        el.addEventListener('click', (e) => {
+            BADGE_COLOR.forEach((elemento) => elemento.classList.remove('active'));
+            const THME_COLOR = el.getAttribute('data-color');
+            document.body.setAttribute('data-theme', THME_COLOR);
+            el.classList.add('active');
+        });
+    });
+
+    // Toggle show more comment
+
+    TOGGLE_COLLAPSE.addEventListener('click', () =>{
+        TOGGLE_COLLAPSE.classList.toggle('active');
+    });
+</script>
