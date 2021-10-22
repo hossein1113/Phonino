@@ -7,4 +7,4 @@ I need help to improve bot
 
 I want move to Typescript and react unfortunately I do not have enough time
 
-This project is one of my first projects, so it does not follow the principles much. I apologize in advance
+This project does not follow the principles much. I apologize in advance
