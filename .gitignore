@@ -5,5 +5,4 @@ image
 log_every
 dump
 package-lock.json
-package.json
 nohup.out
