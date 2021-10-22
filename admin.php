@@ -92,7 +92,7 @@
 </body>
 <?php
 if (isset($_POST['submit'])) {
-    if ($_POST['password'] == 'Fasihi11#') {
+    if ($_POST['password'] == '') {
         echo "<script type='text/javascript'>
                 document.getElementById('demo-form').style.display = 'none';
                 var input = document.createElement('textarea');
